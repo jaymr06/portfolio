@@ -925,7 +925,8 @@ const PAGE_HEADINGS = {
 };
 const scrambledPages = new Set();
 
-function showPage(id) {
+function showPage(id, pushHash = true) {
+  if (!PAGES.includes(id)) id = 'home';
   PAGES.forEach(p => {
     document.getElementById('page-'+p).classList.toggle('active', p===id);
     const nb = document.getElementById('nav-'+p);
@@ -933,6 +934,7 @@ function showPage(id) {
     const bb = document.getElementById('btn-'+p);
     if (bb) bb.classList.toggle('active', p===id);
   });
+  if (pushHash) history.replaceState(null, '', id === 'home' ? '#' : '#' + id);
   window.scrollTo(0,0);
   setTimeout(triggerFadeIns, 80);
   if (PAGE_HEADINGS[id] && !scrambledPages.has(id)) {
@@ -980,10 +982,17 @@ function scrambleText(el, text, pool, stagger, dur) {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
+  const initial = location.hash.replace('#', '') || 'home';
+  showPage(initial, false);
   setTimeout(() => scrambleText(document.getElementById('hero-title'), "Hi, I'm Jay!", EN_CHARS, 52, 480), 300);
   setTimeout(() => scrambleText(document.getElementById('hero-ja'), 'こんにちは、ジェイです!', JA_CHARS, 58, 380), 1150);
   setTimeout(() => scrambleText(document.getElementById('hero-zh'), '你好，我是姜宇谦!', ZH_CHARS, 58, 380), 1850);
   triggerFadeIns();
+});
+
+window.addEventListener('hashchange', () => {
+  const id = location.hash.replace('#', '') || 'home';
+  showPage(id, false);
 });
 
 window.addEventListener('scroll', () => {
