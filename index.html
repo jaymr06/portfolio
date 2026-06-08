@@ -524,9 +524,10 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
   #page-home { padding: 0 32px; }
   .hero-outer { grid-template-columns: 1fr; padding: 96px 0 88px; min-height: unset; }
   .hero-left { padding-right: 0; border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 32px; }
-  .hero-right { flex-direction: column; align-items: center; padding-left: 0; padding-top: 28px; }
-  .avatar-wrap { width: min(280px, 80vw); height: min(280px, 80vw); }
-  .social-col { flex-direction: column; align-items: center; gap: 8px; }
+  .hero-right { flex-direction: row; align-items: center; justify-content: center; padding-left: 0; padding-top: 28px; gap: 20px; }
+  .avatar-wrap { width: 110px; height: 110px; flex-shrink: 0; }
+  .social-col { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .btn-arrow { display: none; }
   .hero-bio { grid-template-columns: 1fr; }
   .inner-page { padding: 96px 24px 96px; }
   .glass-wrap { padding: 32px 24px; border-radius: 12px; }
@@ -630,7 +631,7 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
             </div>
             <div class="project-preview">
               <img src="assets/xaitsnoo-website.png" alt="Xaitsnoo Community Dictionary">
-              <span class="project-arrow">↗</span>
+              <span class="project-arrow">↗&#xFE0E;</span>
             </div>
           </a>
           <a class="project-item" href="https://github.com/jaymr06/dice-vision" target="_blank" rel="noopener">
@@ -644,7 +645,7 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
             </div>
             <div class="project-preview">
               <img src="assets/dice-demo.png" alt="Dice Vision" style="object-position: center 20%">
-              <span class="project-arrow">↗</span>
+              <span class="project-arrow">↗&#xFE0E;</span>
             </div>
           </a>
           <a class="project-item" href="https://debate-club-hell.vercel.app/" target="_blank" rel="noopener">
@@ -658,7 +659,7 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
             </div>
             <div class="project-preview">
               <img src="assets/debate-demo.png" alt="debate-club-hell">
-              <span class="project-arrow">↗</span>
+              <span class="project-arrow">↗&#xFE0E;</span>
             </div>
           </a>
           <a class="project-item" href="https://drive.google.com/file/d/19bhnF3zwJTPj_g37s9-ao-iuTKTYZc0_/view?usp=sharing" target="_blank" rel="noopener">
@@ -672,7 +673,7 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
             </div>
             <div class="project-preview">
               <img src="assets/sightline.png" alt="SightLine" style="object-position: center top">
-              <span class="project-arrow">↗</span>
+              <span class="project-arrow">↗&#xFE0E;</span>
             </div>
           </a>
         </div>
@@ -720,7 +721,7 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
               <div class="exp-role">Linguistic Project Manager</div>
               <div class="exp-desc">Interviewed Nüshu inheritors on history, cultural attitudes, and contemporary developments. Attended classes and spoke with students and authors working to modernize the script. Proposed a future action plan to locals and inheritors, and wrote a research article on Nüshu's sociolinguistic evolution — published on Sina.</div>
             </div>
-            <div class="exp-arrow">↗</div>
+            <div class="exp-arrow">↗&#xFE0E;</div>
           </a>
           <a class="exp-item linkable" href="https://www.chinadevelopmentbrief.org.cn/news/detail/24514.html" target="_blank" rel="noopener">
             <div class="exp-period">Nov 2022 – Nov 2023<br>Shanxi, China</div>
@@ -729,7 +730,7 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
               <div class="exp-role">Market Research Interviewer</div>
               <div class="exp-desc">Conducted interviews with small business owners in Shanxi to investigate challenges in revenue, competition, and capital costs. Distributed outreach materials about Grameen Bank's loan services. Wrote an article on obstacles facing small businesses and how microfinance addresses them — published in China Development Brief.</div>
             </div>
-            <div class="exp-arrow">↗</div>
+            <div class="exp-arrow">↗&#xFE0E;</div>
           </a>
           <div class="exp-item">
             <div class="exp-period">Oct 2021 – Apr 2022<br>Shanghai · Remote</div>
@@ -831,9 +832,9 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
 <div class="bottom-nav">
   <div class="bottom-nav-inner">
     <button class="bottom-btn active" id="btn-home" onclick="showPage('home')">intro</button>
-    <button class="bottom-btn" id="btn-projects" onclick="showPage('projects')">projects →</button>
-    <button class="bottom-btn" id="btn-experience" onclick="showPage('experience')">experience →</button>
-    <button class="bottom-btn" id="btn-fun" onclick="showPage('fun')">fun →</button>
+    <button class="bottom-btn" id="btn-projects" onclick="showPage('projects')">projects <span class="btn-arrow">→</span></button>
+    <button class="bottom-btn" id="btn-experience" onclick="showPage('experience')">experience <span class="btn-arrow">→</span></button>
+    <button class="bottom-btn" id="btn-fun" onclick="showPage('fun')">fun <span class="btn-arrow">→</span></button>
   </div>
 </div>
 
