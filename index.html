@@ -337,6 +337,8 @@ nav.scrolled { border-color: var(--border); }
   color: var(--accent); transform: translate(2px,-2px);
 }
 .project-item:last-child { border-bottom: 1px solid var(--border); }
+a.project-item, a.exp-item { color: inherit; text-decoration: none; display: grid; }
+a.gallery-item { color: inherit; text-decoration: none; display: flex; }
 .project-num {
   font-family: var(--font-en); font-size: 10px;
   color: var(--ink-3); letter-spacing: 0.1em; margin-bottom: 10px;
@@ -609,7 +611,7 @@ nav.scrolled { border-color: var(--border); }
         <h2 class="page-heading" id="heading-projects"></h2>
         <p class="page-subheading">selected work · 2024–2026</p>
         <div class="project-list">
-          <div class="project-item" onclick="window.open('https://github.com/Xaitsnoo-Community-Dictionary-Project/xaitsnoo','_blank')">
+          <a class="project-item" href="https://github.com/Xaitsnoo-Community-Dictionary-Project/xaitsnoo" target="_blank" rel="noopener">
             <div>
               <div class="project-num">01</div>
               <div class="project-name">Xaitsnoo Community Dictionary</div>
@@ -622,8 +624,8 @@ nav.scrolled { border-color: var(--border); }
               <img src="assets/xaitsnoo-website.png" alt="Xaitsnoo Community Dictionary">
               <span class="project-arrow">↗</span>
             </div>
-          </div>
-          <div class="project-item" onclick="window.open('https://github.com/jaymr06/dice-vision','_blank')">
+          </a>
+          <a class="project-item" href="https://github.com/jaymr06/dice-vision" target="_blank" rel="noopener">
             <div>
               <div class="project-num">02</div>
               <div class="project-name">Dice Vision</div>
@@ -636,8 +638,8 @@ nav.scrolled { border-color: var(--border); }
               <img src="assets/dice-demo.png" alt="Dice Vision" style="object-position: center 20%">
               <span class="project-arrow">↗</span>
             </div>
-          </div>
-          <div class="project-item" onclick="window.open('https://debate-club-hell.vercel.app/','_blank')">
+          </a>
+          <a class="project-item" href="https://debate-club-hell.vercel.app/" target="_blank" rel="noopener">
             <div>
               <div class="project-num">03</div>
               <div class="project-name">Debate Club from Hell</div>
@@ -650,8 +652,8 @@ nav.scrolled { border-color: var(--border); }
               <img src="assets/debate-demo.png" alt="debate-club-hell">
               <span class="project-arrow">↗</span>
             </div>
-          </div>
-          <div class="project-item" onclick="window.open('https://drive.google.com/file/d/19bhnF3zwJTPj_g37s9-ao-iuTKTYZc0_/view?usp=sharing','_blank')">
+          </a>
+          <a class="project-item" href="https://drive.google.com/file/d/19bhnF3zwJTPj_g37s9-ao-iuTKTYZc0_/view?usp=sharing" target="_blank" rel="noopener">
             <div>
               <div class="project-num">04</div>
               <div class="project-name">SightLine</div>
@@ -664,7 +666,7 @@ nav.scrolled { border-color: var(--border); }
               <img src="assets/sightline.png" alt="SightLine" style="object-position: center top">
               <span class="project-arrow">↗</span>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -703,7 +705,7 @@ nav.scrolled { border-color: var(--border); }
               <div class="exp-desc">Built a Python script automating Japanese-to-English translation of primary literary sources for a faculty-led Comparative Literature project. Cross-referenced translations against the original Japanese texts to flag nuance, idiom, and cultural-context errors, iteratively refining the workflow for a larger research corpus.</div>
             </div>
           </div>
-          <div class="exp-item linkable" onclick="window.open('http://hunan.sina.com.cn/hninformation/2024-08-05/detail-inchqpah1087183.shtml','_blank')">
+          <a class="exp-item linkable" href="http://hunan.sina.com.cn/hninformation/2024-08-05/detail-inchqpah1087183.shtml" target="_blank" rel="noopener">
             <div class="exp-period">Sep 2023 – Apr 2024<br>Jiangyong, China</div>
             <div>
               <div class="exp-org">Nvshu Ecological Museum · Internship</div>
@@ -711,8 +713,8 @@ nav.scrolled { border-color: var(--border); }
               <div class="exp-desc">Interviewed Nüshu inheritors on history, cultural attitudes, and contemporary developments. Attended classes and spoke with students and authors working to modernize the script. Proposed a future action plan to locals and inheritors, and wrote a research article on Nüshu's sociolinguistic evolution — published on Sina.</div>
             </div>
             <div class="exp-arrow">↗</div>
-          </div>
-          <div class="exp-item linkable" onclick="window.open('https://www.chinadevelopmentbrief.org.cn/news/detail/24514.html','_blank')">
+          </a>
+          <a class="exp-item linkable" href="https://www.chinadevelopmentbrief.org.cn/news/detail/24514.html" target="_blank" rel="noopener">
             <div class="exp-period">Nov 2022 – Nov 2023<br>Shanxi, China</div>
             <div>
               <div class="exp-org">Grameen Bank · Internship</div>
@@ -720,7 +722,7 @@ nav.scrolled { border-color: var(--border); }
               <div class="exp-desc">Conducted interviews with small business owners in Shanxi to investigate challenges in revenue, competition, and capital costs. Distributed outreach materials about Grameen Bank's loan services. Wrote an article on obstacles facing small businesses and how microfinance addresses them — published in China Development Brief.</div>
             </div>
             <div class="exp-arrow">↗</div>
-          </div>
+          </a>
           <div class="exp-item">
             <div class="exp-period">Oct 2021 – Apr 2022<br>Shanghai · Remote</div>
             <div>
@@ -787,13 +789,13 @@ nav.scrolled { border-color: var(--border); }
         <div class="fun-section">
           <div class="fun-section-label">Language Learning</div>
           <div class="gallery-list">
-            <div class="gallery-item linkable" onclick="window.open('assets/n2-certificate.jpg','_blank')">
+            <a class="gallery-item linkable" href="assets/n2-certificate.jpg" target="_blank" rel="noopener">
               <div class="gallery-img"><img src="assets/n2-certificate.jpg" alt="JLPT N2 Certificate"></div>
               <div class="gallery-text">
                 <div class="gallery-title">JLPT N2</div>
                 <div class="gallery-desc">Passed the JLPT N2 (Japanese Language Proficiency Test), the second-highest level. Currently working toward N1!</div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
 
@@ -803,13 +805,13 @@ nav.scrolled { border-color: var(--border); }
         <div class="fun-section">
           <div class="fun-section-label">Writing</div>
           <div class="gallery-list">
-            <div class="gallery-item reverse linkable" onclick="window.open('assets/writing-folio.pdf','_blank')">
+            <a class="gallery-item reverse linkable" href="assets/writing-folio.pdf" target="_blank" rel="noopener">
               <div class="gallery-img"><img src="assets/writing-folio.jpg" alt="Writing Portfolio"></div>
               <div class="gallery-text">
                 <div class="gallery-title">Writing Portfolio</div>
                 <div class="gallery-desc">I did a lot of creative writing! Here are some excerpts, if you're interested. Depending on how this CS thing works out, I might have to pivot... /halfjoking</div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>
