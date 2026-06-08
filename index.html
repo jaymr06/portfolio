@@ -529,6 +529,12 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
   .inner-page { padding: 96px 24px 96px; }
   .glass-wrap { padding: 32px 24px; border-radius: 12px; }
   .exp-item { grid-template-columns: 1fr; gap: 6px; }
+  .exp-item.linkable { grid-template-columns: 1fr; position: relative; }
+  .exp-item.linkable .exp-arrow { position: absolute; top: 28px; right: 0; }
+  .project-item { grid-template-columns: 1fr; }
+  .project-preview { order: -1; }
+  .gallery-item, .gallery-item.reverse { flex-direction: column; gap: 24px; }
+  .gallery-img { width: 100%; max-width: 100%; flex-shrink: 0; }
   .bottom-nav { padding: 0 24px 20px; }
 }
 </style>
@@ -789,13 +795,13 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
         <div class="fun-section">
           <div class="fun-section-label">Language Learning</div>
           <div class="gallery-list">
-            <a class="gallery-item linkable" href="assets/n2-certificate.jpg" target="_blank" rel="noopener">
+            <div class="gallery-item">
               <div class="gallery-img"><img src="assets/n2-certificate.jpg" alt="JLPT N2 Certificate"></div>
               <div class="gallery-text">
                 <div class="gallery-title">JLPT N2</div>
                 <div class="gallery-desc">Passed the JLPT N2 (Japanese Language Proficiency Test), the second-highest level. Currently working toward N1!</div>
               </div>
-            </a>
+            </div>
           </div>
         </div>
 
