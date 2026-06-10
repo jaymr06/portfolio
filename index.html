@@ -117,6 +117,28 @@ nav.scrolled { border-color: var(--border); }
 .nav-links button.active-nav { color: var(--accent); }
 .nav-links button.active-nav::after { width: 100%; }
 
+body.lang-zh { --font-en: 'Source Serif 4', 'Georgia', serif, 'LXGW WenKai Mono TC', monospace; }
+body.lang-ja { --font-en: 'Source Serif 4', 'Georgia', serif, 'Zen Kurenaido', serif; }
+body.lang-zh .project-desc, body.lang-ja .project-desc,
+body.lang-zh .exp-desc,     body.lang-ja .exp-desc,
+body.lang-zh .gallery-desc, body.lang-ja .gallery-desc { font-size: 15px; font-weight: 400; line-height: 1.95; }
+body.lang-zh .hero-bio p,   body.lang-ja .hero-bio p   { font-size: 16px; font-weight: 400; line-height: 1.95; }
+body.lang-zh .page-subheading, body.lang-ja .page-subheading { font-size: 13px; letter-spacing: 0; }
+body.lang-zh .project-name, body.lang-ja .project-name,
+body.lang-zh .exp-role,     body.lang-ja .exp-role,
+body.lang-zh .gallery-title,body.lang-ja .gallery-title { font-style: normal; }
+
+/* ── LANG SWITCH ── */
+.lang-switch { position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 4px; }
+.lang-btn {
+  background: none; border: none; cursor: pointer; padding: 2px 5px;
+  font-family: var(--font-en); font-size: 11px; letter-spacing: 0.06em;
+  color: var(--ink-3); transition: color var(--t);
+}
+.lang-btn:hover { color: var(--ink); }
+.lang-btn.active { color: var(--accent); font-weight: 500; }
+.lang-sep { color: var(--border); font-size: 11px; user-select: none; }
+
 /* ── HERO ── */
 #page-home {
   padding: 0 56px;
@@ -157,7 +179,7 @@ nav.scrolled { border-color: var(--border); }
 
 /* English title — Source Serif 4 */
 .hero-title {
-  font-family: var(--font-en);
+  font-family: 'Source Serif 4', 'Georgia', serif;
   font-size: clamp(58px, 7.5vw, 104px);
   line-height: 1.0;
   letter-spacing: -0.02em;
@@ -539,6 +561,7 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
   .gallery-item, .gallery-item.reverse { flex-direction: column; gap: 24px; }
   .gallery-img { width: 100%; max-width: 100%; flex-shrink: 0; }
   .bottom-nav { padding: 0 24px 20px; }
+  body.lang-ja .bottom-btn { font-size: 10px; padding: 9px 22px; }
 }
 </style>
 </head>
@@ -552,6 +575,13 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
 
 <nav id="main-nav">
   <span class="nav-wordmark" onclick="showPage('home')"><em>jay</em> /</span>
+  <div class="lang-switch">
+    <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" data-lang="zh" onclick="setLang('zh')">中</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" data-lang="ja" onclick="setLang('ja')">日</button>
+  </div>
   <ul class="nav-links">
     <li><button onclick="showPage('home')" class="active-nav" id="nav-home">intro</button></li>
     <li><button onclick="showPage('projects')" id="nav-projects">projects</button></li>
@@ -577,8 +607,8 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
         </div>
       </div>
       <div class="hero-bio">
-        <p>I'm a CS and Linguistics double major at Berkeley, focused on NLP and ML. I've worked on <em>SightLine</em>, a ML Day-Recap App using Meta Ray-Ban Glasses, website development for <em>Xaitsnoo</em>, a critically endangered language, and contributed to Japanese–English translation research through Berkeley's URAP.</p>
-        <p>I like <a href="#" onclick="showPage('projects');return false;">building projects</a>, <a href="#" onclick="showPage('fun');return false;">learning languages</a>, and getting to know new people. Don't hesitate to reach out if you want to talk about anything CS or Linguistics related, or, anything, really.</p>
+        <p data-i18n-html="bio1">I'm a CS and Linguistics double major at Berkeley, focused on NLP and ML. I've worked on <em>SightLine</em>, a ML Day-Recap App using Meta Ray-Ban Glasses, website development for <em>Xaitsnoo</em>, a critically endangered language, and contributed to Japanese–English translation research through Berkeley's URAP.</p>
+        <p data-i18n-html="bio2">I like <a href="#" onclick="showPage('projects');return false;">building projects</a>, <a href="#" onclick="showPage('fun');return false;">learning languages</a>, and getting to know new people. Don't hesitate to reach out if you want to talk about anything CS or Linguistics related, or, anything, really.</p>
       </div>
       <div class="hero-meta">
         <span class="meta-chip hi">NLP</span>
@@ -618,13 +648,13 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
     <div class="inner-wrap">
       <div class="glass-wrap fade-in">
         <h2 class="page-heading" id="heading-projects"></h2>
-        <p class="page-subheading">selected work · 2024–2026</p>
+        <p class="page-subheading" data-i18n="sub_projects">selected work · 2024–2026</p>
         <div class="project-list">
           <a class="project-item" href="https://github.com/Xaitsnoo-Community-Dictionary-Project/xaitsnoo" target="_blank" rel="noopener">
             <div>
               <div class="project-num">01</div>
-              <div class="project-name">Xaitsnoo Community Dictionary</div>
-              <div class="project-desc">A digital community dictionary for Xaitsnoo, a critically endangered language. Built with Next.js and deployed to Vercel as part of a URAP research engagement. Infrastructure for corpus documentation and an NLP pipeline.</div>
+              <div class="project-name" data-i18n="proj1_name">Xaitsnoo Community Dictionary</div>
+              <div class="project-desc" data-i18n="proj1_desc">A digital community dictionary for Xaitsnoo, a critically endangered language. Built with Next.js and deployed to Vercel as part of a URAP research engagement. Infrastructure for corpus documentation and an NLP pipeline.</div>
               <div class="project-tags">
                 <span class="tag">Next.js</span><span class="tag">NLP</span><span class="tag">Language Documentation</span><span class="tag">React</span>
               </div>
@@ -637,8 +667,8 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
           <a class="project-item" href="https://github.com/jaymr06/dice-vision" target="_blank" rel="noopener">
             <div>
               <div class="project-num">02</div>
-              <div class="project-name">Dice Vision</div>
-              <div class="project-desc">Real-time dice detection with a fine-tuned YOLOv8 model (mAP50 ~0.966). FastAPI backend, mobile browser frontend. Targeting deployment to Hugging Face Spaces and Vercel.</div>
+              <div class="project-name" data-i18n="proj2_name">Dice Vision</div>
+              <div class="project-desc" data-i18n="proj2_desc">Real-time dice detection with a fine-tuned YOLOv8 model (mAP50 ~0.966). FastAPI backend, mobile browser frontend. Targeting deployment to Hugging Face Spaces and Vercel.</div>
               <div class="project-tags">
                 <span class="tag">YOLOv8</span><span class="tag">FastAPI</span><span class="tag">Computer Vision</span><span class="tag">Python</span>
               </div>
@@ -651,8 +681,8 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
           <a class="project-item" href="https://debate-club-hell.vercel.app/" target="_blank" rel="noopener">
             <div>
               <div class="project-num">03</div>
-              <div class="project-name">Debate Club from Hell</div>
-              <div class="project-desc">An interactive browser debate game featuring Mafu, an AI rendition of my D&D OC. Deployed to Vercel.</div>
+              <div class="project-name" data-i18n="proj3_name">Debate Club from Hell</div>
+              <div class="project-desc" data-i18n="proj3_desc">An interactive browser debate game featuring Mafu, an AI rendition of my D&D OC. Deployed to Vercel.</div>
               <div class="project-tags">
                 <span class="tag">Claude API</span><span class="tag">TypeScript</span><span class="tag">Vercel</span><span class="tag">Full-stack</span>
               </div>
@@ -665,8 +695,8 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
           <a class="project-item" href="https://drive.google.com/file/d/19bhnF3zwJTPj_g37s9-ao-iuTKTYZc0_/view?usp=sharing" target="_blank" rel="noopener">
             <div>
               <div class="project-num">04</div>
-              <div class="project-name">SightLine</div>
-              <div class="project-desc">Contributed to a 15-member team building an end-to-end ML pipeline that ingests video from Meta Ray-Ban glasses and generates a 60-second daily highlight recap. Built a Python NLP module using transformer-based models to extract semantic context from audio transcripts.</div>
+              <div class="project-name" data-i18n="proj4_name">SightLine</div>
+              <div class="project-desc" data-i18n="proj4_desc">Contributed to a 15-member team building an end-to-end ML pipeline that ingests video from Meta Ray-Ban glasses and generates a 60-second daily highlight recap. Built a Python NLP module using transformer-based models to extract semantic context from audio transcripts.</div>
               <div class="project-tags">
                 <span class="tag">Python</span><span class="tag">NLP</span><span class="tag">Transformers</span><span class="tag">Meta Ray-Ban</span><span class="tag">ML Pipeline</span>
               </div>
@@ -688,61 +718,61 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
     <div class="inner-wrap">
       <div class="glass-wrap fade-in">
         <h2 class="page-heading" id="heading-experience"></h2>
-        <p class="page-subheading">work, research, and skills</p>
+        <p class="page-subheading" data-i18n="sub_experience">work, research, and skills</p>
         <div class="exp-list">
           <div class="exp-item">
             <div class="exp-period">Jun 2026 — present<br>Remote</div>
             <div>
-              <div class="exp-org">FlyRank AI · Internship</div>
-              <div class="exp-role">Machine Learning Intern</div>
-              <div class="exp-desc">Interning at FlyRank AI, focusing on machine learning for organic growth automation. Working with AI and ML algorithms in a fast-paced startup environment.</div>
+              <div class="exp-org" data-i18n="exp1_org">FlyRank AI · Internship</div>
+              <div class="exp-role" data-i18n="exp1_role">Machine Learning Intern</div>
+              <div class="exp-desc" data-i18n="exp1_desc">Interning at FlyRank AI, focusing on machine learning for organic growth automation. Working with AI and ML algorithms in a fast-paced startup environment.</div>
             </div>
           </div>
           <div class="exp-item">
             <div class="exp-period">Jan – May 2026<br>Berkeley, CA</div>
             <div>
-              <div class="exp-org">UC Berkeley · URAP</div>
-              <div class="exp-role">LRAP Research Assistant — Xaitsnoo</div>
-              <div class="exp-desc">Completed audio transcriptions and phonology work on linguistic databases. Wrote Python scripts to scrape and organize linguistic data into a dictionary. Used React and Ariakit to build the front-end of a culturally accurate linguistic database for the Xaitsnoo language.</div>
+              <div class="exp-org" data-i18n="exp2_org">UC Berkeley · URAP</div>
+              <div class="exp-role" data-i18n="exp2_role">LRAP Research Assistant — Xaitsnoo</div>
+              <div class="exp-desc" data-i18n="exp2_desc">Completed audio transcriptions and phonology work on linguistic databases. Wrote Python scripts to scrape and organize linguistic data into a dictionary. Used React and Ariakit to build the front-end of a culturally accurate linguistic database for the Xaitsnoo language.</div>
             </div>
           </div>
           <div class="exp-item">
             <div class="exp-period">Jan – May 2026<br>Berkeley, CA</div>
             <div>
-              <div class="exp-org">UC Berkeley · URAP</div>
-              <div class="exp-role">URAP Research Assistant — Japanese–English Translation</div>
-              <div class="exp-desc">Built a Python script automating Japanese-to-English translation of primary literary sources for a faculty-led Comparative Literature project. Cross-referenced translations against the original Japanese texts to flag nuance, idiom, and cultural-context errors, iteratively refining the workflow for a larger research corpus.</div>
+              <div class="exp-org" data-i18n="exp3_org">UC Berkeley · URAP</div>
+              <div class="exp-role" data-i18n="exp3_role">URAP Research Assistant — Japanese–English Translation</div>
+              <div class="exp-desc" data-i18n="exp3_desc">Built a Python script automating Japanese-to-English translation of primary literary sources for a faculty-led Comparative Literature project. Cross-referenced translations against the original Japanese texts to flag nuance, idiom, and cultural-context errors, iteratively refining the workflow for a larger research corpus.</div>
             </div>
           </div>
           <a class="exp-item linkable" href="http://hunan.sina.com.cn/hninformation/2024-08-05/detail-inchqpah1087183.shtml" target="_blank" rel="noopener">
             <div class="exp-period">Sep 2023 – Apr 2024<br>Jiangyong, China</div>
             <div>
-              <div class="exp-org">Nvshu Ecological Museum · Internship</div>
-              <div class="exp-role">Linguistic Project Manager</div>
-              <div class="exp-desc">Interviewed Nüshu inheritors on history, cultural attitudes, and contemporary developments. Attended classes and spoke with students and authors working to modernize the script. Proposed a future action plan to locals and inheritors, and wrote a research article on Nüshu's sociolinguistic evolution — published on Sina.</div>
+              <div class="exp-org" data-i18n="exp4_org">Nvshu Ecological Museum · Internship</div>
+              <div class="exp-role" data-i18n="exp4_role">Linguistic Project Manager</div>
+              <div class="exp-desc" data-i18n="exp4_desc">Interviewed Nüshu inheritors on history, cultural attitudes, and contemporary developments. Attended classes and spoke with students and authors working to modernize the script. Proposed a future action plan to locals and inheritors, and wrote a research article on Nüshu's sociolinguistic evolution — published on Sina.</div>
             </div>
             <div class="exp-arrow">↗&#xFE0E;</div>
           </a>
           <a class="exp-item linkable" href="https://www.chinadevelopmentbrief.org.cn/news/detail/24514.html" target="_blank" rel="noopener">
             <div class="exp-period">Nov 2022 – Nov 2023<br>Shanxi, China</div>
             <div>
-              <div class="exp-org">Grameen Bank · Internship</div>
-              <div class="exp-role">Market Research Interviewer</div>
-              <div class="exp-desc">Conducted interviews with small business owners in Shanxi to investigate challenges in revenue, competition, and capital costs. Distributed outreach materials about Grameen Bank's loan services. Wrote an article on obstacles facing small businesses and how microfinance addresses them — published in China Development Brief.</div>
+              <div class="exp-org" data-i18n="exp5_org">Grameen Bank · Internship</div>
+              <div class="exp-role" data-i18n="exp5_role">Market Research Interviewer</div>
+              <div class="exp-desc" data-i18n="exp5_desc">Conducted interviews with small business owners in Shanxi to investigate challenges in revenue, competition, and capital costs. Distributed outreach materials about Grameen Bank's loan services. Wrote an article on obstacles facing small businesses and how microfinance addresses them — published in China Development Brief.</div>
             </div>
             <div class="exp-arrow">↗&#xFE0E;</div>
           </a>
           <div class="exp-item">
             <div class="exp-period">Oct 2021 – Apr 2022<br>Shanghai · Remote</div>
             <div>
-              <div class="exp-org">Beyond Horizon · Internship</div>
-              <div class="exp-role">English Tutor</div>
-              <div class="exp-desc">Taught English to underprivileged elementary school students in Taiwan over Zoom. Developed bilingual English–Chinese educational workbooks tailored to student needs.</div>
+              <div class="exp-org" data-i18n="exp6_org">Beyond Horizon · Internship</div>
+              <div class="exp-role" data-i18n="exp6_role">English Tutor</div>
+              <div class="exp-desc" data-i18n="exp6_desc">Taught English to underprivileged elementary school students in Taiwan over Zoom. Developed bilingual English–Chinese educational workbooks tailored to student needs.</div>
             </div>
           </div>
         </div>
         <div class="section-rule"></div>
-        <div class="section-label">Technical Skills</div>
+        <div class="section-label" data-i18n="label_skills">Technical Skills</div>
         <div class="skills-strip">
           <span class="skill-pill">Python</span>
           <span class="skill-pill">TypeScript</span>
@@ -769,24 +799,24 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
     <div class="inner-wrap">
       <div class="glass-wrap fade-in">
         <h2 class="page-heading" id="heading-fun"></h2>
-        <p class="page-subheading">drawings, languages, and more</p>
+        <p class="page-subheading" data-i18n="sub_fun">drawings, languages, and more</p>
 
         <!-- Drawings gallery -->
         <div class="fun-section">
-          <div class="fun-section-label">Sketches</div>
+          <div class="fun-section-label" data-i18n="label_sketches">Sketches</div>
           <div class="gallery-list">
             <div class="gallery-item">
               <div class="gallery-img"><img src="assets/art2.png" alt="art 2"></div>
               <div class="gallery-text">
-                <div class="gallery-title">DPD (Digital Painting Decal)</div>
-                <div class="gallery-desc">I joined the Digital Painting Decal on campus during my freshman spring, and it was one of the best experiences I ever had. Not only did I meet my current girlfriend there, but I also had the chance to make this as my final project! I had a lot of fun learning how to draw.</div>
+                <div class="gallery-title" data-i18n="art2_title">DPD (Digital Painting Decal)</div>
+                <div class="gallery-desc" data-i18n="art2_desc">I joined the Digital Painting Decal on campus during my freshman spring, and it was one of the best experiences I ever had. Not only did I meet my current girlfriend there, but I also had the chance to make this as my final project! I had a lot of fun learning how to draw.</div>
               </div>
             </div>
             <div class="gallery-item reverse">
               <div class="gallery-img"><img src="assets/art1.jpg" alt="art 1"></div>
               <div class="gallery-text">
-                <div class="gallery-title">Mafu Chrysalis</div>
-                <div class="gallery-desc">This was my first rendition of my D&D OC, Mafu (Along with my other party members, Teotl and Nox), who later became the inspiration for the game Debate Club from Hell. I was pretty proud of this.</div>
+                <div class="gallery-title" data-i18n="art1_title">Mafu Chrysalis</div>
+                <div class="gallery-desc" data-i18n="art1_desc">This was my first rendition of my D&D OC, Mafu (Along with my other party members, Teotl and Nox), who later became the inspiration for the game Debate Club from Hell. I was pretty proud of this.</div>
               </div>
             </div>
           </div>
@@ -796,13 +826,13 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
 
         <!-- Language Learning -->
         <div class="fun-section">
-          <div class="fun-section-label">Language Learning</div>
+          <div class="fun-section-label" data-i18n="label_lang">Language Learning</div>
           <div class="gallery-list">
             <div class="gallery-item">
               <div class="gallery-img"><img src="assets/n2-certificate.jpg" alt="JLPT N2 Certificate"></div>
               <div class="gallery-text">
-                <div class="gallery-title">JLPT N2</div>
-                <div class="gallery-desc">Passed the JLPT N2 (Japanese Language Proficiency Test), the second-highest level. Currently working toward N1!</div>
+                <div class="gallery-title" data-i18n="n2_title">JLPT N2</div>
+                <div class="gallery-desc" data-i18n="n2_desc">Passed the JLPT N2 (Japanese Language Proficiency Test), the second-highest level. Currently working toward N1!</div>
               </div>
             </div>
           </div>
@@ -812,13 +842,13 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
 
         <!-- Writing -->
         <div class="fun-section">
-          <div class="fun-section-label">Writing</div>
+          <div class="fun-section-label" data-i18n="label_writing">Writing</div>
           <div class="gallery-list">
             <a class="gallery-item reverse linkable" href="assets/writing-folio.pdf" target="_blank" rel="noopener">
               <div class="gallery-img"><img src="assets/writing-folio.jpg" alt="Writing Portfolio"></div>
               <div class="gallery-text">
-                <div class="gallery-title">Writing Portfolio</div>
-                <div class="gallery-desc">I did a lot of creative writing! Here are some excerpts, if you're interested. Depending on how this CS thing works out, I might have to pivot... /halfjoking</div>
+                <div class="gallery-title" data-i18n="folio_title">Writing Portfolio</div>
+                <div class="gallery-desc" data-i18n="folio_desc">I did a lot of creative writing! Here are some excerpts, if you're interested. Depending on how this CS thing works out, I might have to pivot... /halfjoking</div>
               </div>
             </a>
           </div>
@@ -927,12 +957,193 @@ let T = 0;
 ───────────────────────────────────────────── */
 const PAGES = ['home','projects','experience','fun'];
 
-const PAGE_HEADINGS = {
+/* ─── TRANSLATIONS ─── */
+const STRINGS = {
+  en: {
+    tag: 'uc berkeley  ·  class of 2029',
+    nav: ['intro','projects','experience','fun'],
+    headings: { projects:'Projects', experience:'Experience', fun:'Fun' },
+    sub_projects: 'selected work · 2024–2026',
+    sub_experience: 'work, research, and skills',
+    sub_fun: 'drawings, languages, and more',
+    label_skills: 'Technical Skills',
+    label_sketches: 'Sketches',
+    label_lang: 'Language Learning',
+    label_writing: 'Writing',
+    bio1: 'I\'m a CS and Linguistics double major at Berkeley, focused on NLP and ML. I\'ve worked on <em>SightLine</em>, a ML Day-Recap App using Meta Ray-Ban Glasses, website development for <em>Xaitsnoo</em>, a critically endangered language, and contributed to Japanese–English translation research through Berkeley\'s URAP.',
+    bio2: 'I like <a href="#" onclick="showPage(\'projects\');return false;">building projects</a>, <a href="#" onclick="showPage(\'fun\');return false;">learning languages</a>, and getting to know new people. Don\'t hesitate to reach out if you want to talk about anything CS or Linguistics related, or, anything, really.',
+    art2_title: 'DPD (Digital Painting Decal)',
+    art2_desc: 'I joined the Digital Painting Decal on campus during my freshman spring, and it was one of the best experiences I ever had. Not only did I meet my current girlfriend there, but I also had the chance to make this as my final project! I had a lot of fun learning how to draw.',
+    art1_title: 'Mafu Chrysalis',
+    art1_desc: 'This was my first rendition of my D&D OC, Mafu (Along with my other party members, Teotl and Nox), who later became the inspiration for the game Debate Club from Hell. I was pretty proud of this.',
+    n2_title: 'JLPT N2',
+    n2_desc: 'Passed the JLPT N2 (Japanese Language Proficiency Test), the second-highest level. Currently working toward N1!',
+    folio_title: 'Writing Portfolio',
+    folio_desc: 'I did a lot of creative writing! Here are some excerpts, if you\'re interested. Depending on how this CS thing works out, I might have to pivot... /halfjoking',
+    proj1_name: 'Xaitsnoo Community Dictionary',
+    proj1_desc: 'A digital community dictionary for Xaitsnoo, a critically endangered language. Built with Next.js and deployed to Vercel as part of a URAP research engagement. Infrastructure for corpus documentation and an NLP pipeline.',
+    proj2_name: 'Dice Vision',
+    proj2_desc: 'Real-time dice detection with a fine-tuned YOLOv8 model (mAP50 ~0.966). FastAPI backend, mobile browser frontend. Targeting deployment to Hugging Face Spaces and Vercel.',
+    proj3_name: 'Debate Club from Hell',
+    proj3_desc: 'An interactive browser debate game featuring Mafu, an AI rendition of my D&D OC. Deployed to Vercel.',
+    proj4_name: 'SightLine',
+    proj4_desc: 'Contributed to a 15-member team building an end-to-end ML pipeline that ingests video from Meta Ray-Ban glasses and generates a 60-second daily highlight recap. Built a Python NLP module using transformer-based models to extract semantic context from audio transcripts.',
+    exp1_org: 'FlyRank AI · Internship', exp1_role: 'Machine Learning Intern',
+    exp1_desc: 'Interning at FlyRank AI, focusing on machine learning for organic growth automation. Working with AI and ML algorithms in a fast-paced startup environment.',
+    exp2_org: 'UC Berkeley · LRAP', exp2_role: 'LRAP Research Assistant — Xaitsnoo',
+    exp2_desc: 'Completed audio transcriptions and phonology work on linguistic databases. Wrote Python scripts to scrape and organize linguistic data into a dictionary. Used React and Ariakit to build the front-end of a culturally accurate linguistic database for the Xaitsnoo language.',
+    exp3_org: 'UC Berkeley · URAP', exp3_role: 'URAP Research Assistant — Japanese–English Translation',
+    exp3_desc: 'Built a Python script automating Japanese-to-English translation of primary literary sources for a faculty-led Comparative Literature project. Cross-referenced translations against the original Japanese texts to flag nuance, idiom, and cultural-context errors, iteratively refining the workflow for a larger research corpus.',
+    exp4_org: 'Nvshu Ecological Museum · Internship', exp4_role: 'Linguistic Project Manager',
+    exp4_desc: 'Interviewed Nüshu inheritors on history, cultural attitudes, and contemporary developments. Attended classes and spoke with students and authors working to modernize the script. Proposed a future action plan to locals and inheritors, and wrote a research article on Nüshu\'s sociolinguistic evolution — published on Sina.',
+    exp5_org: 'Grameen Bank · Internship', exp5_role: 'Market Research Interviewer',
+    exp5_desc: 'Conducted interviews with small business owners in Shanxi to investigate challenges in revenue, competition, and capital costs. Distributed outreach materials about Grameen Bank\'s loan services. Wrote an article on obstacles facing small businesses and how microfinance addresses them — published in China Development Brief.',
+    exp6_org: 'Beyond Horizon · Internship', exp6_role: 'English Tutor',
+    exp6_desc: 'Taught English to underprivileged elementary school students in Taiwan over Zoom. Developed bilingual English–Chinese educational workbooks tailored to student needs.',
+  },
+  zh: {
+    tag: '加州大学伯克利分校 · 2029届',
+    nav: ['简介','项目','经历','趣味'],
+    headings: { projects:'项目', experience:'经历', fun:'趣味' },
+    sub_projects: '精选作品 · 2024–2026',
+    sub_experience: '工作、科研与技能',
+    sub_fun: '画画、语言，更多',
+    label_skills: '技术技能',
+    label_sketches: '画作',
+    label_lang: '语言学习',
+    label_writing: '写作',
+    bio1: '我是伯克利大学计算机科学与语言学的双学位学生，主要学习自然语言处理和机器学习。我曾参与开发<em>SightLine</em>——一个基于Meta Ray-Ban眼镜的AI日记项目；为濒危语言<em>Xaitsnoo</em>构建线上词典；并通过伯克利的URAP科研项目参与日英翻译研究。',
+    bio2: '我喜欢<a href="#" onclick="showPage(\'projects\');return false;">做项目</a>、<a href="#" onclick="showPage(\'fun\');return false;">学习语言</a>，认识新同学！如果你想聊聊天，无论有关计算机科学、语言学，或者任何话题，随时欢迎！',
+    art2_title: '神奇数字马戏团',
+    art2_desc: '我大一下学期加入了校园电子绘画课，是我在伯克利上过的最宝贵的课之一。我不仅在那里认识了我的女朋友，还画了这幅画当作我的最终作品。有这个机会和大家一起学画画，超好玩。',
+    art1_title: '米饭 · 破茧 (Mafu Chrysalis)',
+    art1_desc: '这是我第一次画我的D&D原创角色，米饭（Mafu，连同队友Teotl和Nox）。她后来也成为我的原创游戏《地狱辩论俱乐部》的灵感来源。我画她很开心。',
+    n2_title: '日语能力考试 N2',
+    n2_desc: '我通过了日语能力考试N2（第二高的等级），目前正在备考N1！',
+    folio_title: '写作集',
+    folio_desc: '我随笔了挺多创意写作！如果你感兴趣的话，这里有些节选。万一CS这条路走不通可能得转这行了……半开玩笑。',
+    proj1_name: 'Xaitsnoo社区词典',
+    proj1_desc: '为濒危语言Xaitsnoo构建的数字社区词典。使用Next.js开发并部署至Vercel，作为URAP研究项目的一部分，提供语料文档与NLP流水线基础设施。',
+    proj2_name: 'Dice Vision（骰子检测）',
+    proj2_desc: '基于精调YOLOv8模型（mAP50约0.966）的实时骰子检测系统。FastAPI后端，移动浏览器前端，目标部署至Hugging Face Spaces与Vercel。',
+    proj3_name: '地狱辩论俱乐部',
+    proj3_desc: '一个小型的自创浏览器AI辩论游戏，其中的主角Mafu是我D&D原创角色!，已部发布至Vercel，可以试玩。',
+    proj4_name: 'SightLine',
+    proj4_desc: '参与15人团队构建端到端ML流水线——从Meta Ray-Ban眼镜摄取视频，通过视频与语音星系生成每日的60秒精彩回顾。我使用T了ransformer模型，从音频中提取语义上下文的Python NLP模块。',
+    exp1_org: 'FlyRank AI · 实习', exp1_role: '机器学习实习生',
+    exp1_desc: '我在FlyRank AI实习，专注于有机增长自动化的机器学习方向，在快节奏创业环境中应用AI与ML算法。',
+    exp2_org: '加州大学伯克利分校 · LRAP', exp2_role: 'LRAP研究助理 — Xaitsnoo项目',
+    exp2_desc: '我完成了语言数据库的音频转录与音韵学工作，编Python脚本抓取并整理语言数据至词典，用了React与Ariakit创作了Xaitsnoo语言数据库的文化准确前端界面。',
+    exp3_org: '加州大学伯克利分校 · URAP', exp3_role: 'URAP研究助理 — 日英翻译',
+    exp3_desc: '我为教授主导的比较文学项目构建了Python脚本，自动化完成文学原典的日英翻译。将译文与日文原文对照，标记细微差别、成语及文化语境错误，持续优化更大语料库的翻译工作流。',
+    exp4_org: '女书生态博物馆 · 实习', exp4_role: '语言项目经理',
+    exp4_desc: '我对女书传承人进行采访，了解历史、文化态度与当代发展。我旁听了课程，与致力于文字现代化的学生及作者交流；向当地居民及传承人也提出了行动方案，并撰写关于女书社会语言学演变的研究文章，发表于新浪。',
+    exp5_org: '格莱珉银行 · 实习', exp5_role: '市场调研访谈员',
+    exp5_desc: '我赴山西对小企业主开展访谈，调查营收、竞争与资本成本方面的困难。发放了格莱珉银行贷款服务推广材料，并撰写关于小企业面临的障碍及小额信贷应对之策的文章，发表于中国发展简报。',
+    exp6_org: 'Beyond Horizon · 实习', exp6_role: '英语辅导老师',
+    exp6_desc: '我通过Zoom为台湾小学生教授英语，编写符合学生需求的中英双语教育练习册。',
+  },
+  ja: {
+    tag: 'UCバークレー · 2029年卒',
+    nav: ['紹介','プロジェクト','経歴','趣味'],
+    headings: { projects:'プロジェクト', experience:'経歴', fun:'趣味' },
+    sub_projects: '厳選作品 · 2024–2026',
+    sub_experience: '仕事・研究・スキル',
+    sub_fun: 'イラスト・語学・その他',
+    label_skills: '技術スキル',
+    label_sketches: 'イラスト',
+    label_lang: '語学学習',
+    label_writing: 'ライティング',
+    bio1: '僕はバークレー大学でCS・言語学を専攻し、NLPと機械学習を中心として勉強しています。<em>SightLine</em>（レイバンメタグラスを使ったAI日記サイト）の開発、消滅危機言語<em>Xaitsnoo</em>のデジタル辞典の構築、そしてURAP研究プログラムでの日英翻訳研究などに携わりました。',
+    bio2: '<a href="#" onclick="showPage(\'projects\');return false;">プロジェクト作り</a>、<a href="#" onclick="showPage(\'fun\');return false;">語学学習</a>、友達を作るのが好きです。CS・言語学・なんでも話したいことがあったら、気軽に話しかけてください！',
+    art2_title: 'ザ・アメイジング・デジタル・サーカス',
+    art2_desc: '僕一年生の春学期に、デジタルペインティングDecalに参加し、最高のチョイスでした。現在の彼女と出会ったのもそこで、ファイナルプロジェクトとしてこの絵を描きました。絵を学ぶのがめちゃくちゃ楽しかったです。',
+    art1_title: 'まふ　クリサラス',
+    art1_desc: 'D&Dのオリキャラまふ（仲間のTeotl・Noxとともに）を初めて描いた作品。後に「地獄の討論クラブ」という自作ゲームのインスピレーションになりました。名前の由来は「まふまふ」という大好きな歌い手です！。',
+    n2_title: 'JLPT N2',
+    n2_desc: '日本語能力試験N2（第2レベル）に合格しました。現在N1に向けて勉強中です！',
+    folio_title: 'ライティングポートフォリオ',
+    folio_desc: 'たくさんのクリエイティブライティングを書いてきました！興味があればぜひご覧ください。だからCSがうまくいかなかったら転向するかも……（苦笑）',
+    proj1_name: 'Xaitsnooコミュニティ辞書',
+    proj1_desc: '消滅危機言語Xaitsnooのデジタル辞書、Next.jsで構築しVercelにデプロイしました。バークレーのLRAP研究の一環として、コーパスのドキュメントとNLPパイプラインの基盤を提供しました。',
+    proj2_name: 'Dice Vision',
+    proj2_desc: 'ファインチューニングしたYOLOv8モデル（mAP50約0.966）によるリアルタイムサイコロ検出サイトを建築。FastAPIのバックエンド、モバイルブラウザのフロントエンド。Hugging Face SpacesとVercelへのデプロイを目指しています。',
+    proj3_name: 'Debate Club from Hell',
+    proj3_desc: 'D&DのオリキャラまふのAIバージョンが登場するインタラクティブなブラウザ討伐ゲーム。Vercelにデプロイしました。',
+    proj4_name: 'SightLine',
+    proj4_desc: '15人チームでエンドツーエンドのMLパイプラインを構築し、レイバンメタグラス（AI搭載のスマートグラス）から映像を取り込み60秒の1日ハイライトを自動生成。Transformerベースのモデルで音声書き起こしから意味的文脈を抽出するPython NLPモジュールを担当。',
+    exp1_org: 'FlyRank AI · インターン', exp1_role: '機械学習インターン',
+    exp1_desc: 'FlyRank AIにてインターン中。オーガニック成長自動化のための機械学習に取り組み、スタートアップ環境でAI・MLアルゴリズムを活用しています。',
+    exp2_org: 'UCバークレー · LRAP', exp2_role: 'LRAP研究アシスタント — Xaitsnooプロジェクト',
+    exp2_desc: '言語データベースの音声書き起こしと音韻論作業を完了。PythonスクリプトでXaitsnoo言語データを収集・整理し辞書を構築。ReactとAriakitで文化的に正確なフロントエンドを開発。',
+    exp3_org: 'UCバークレー · URAP', exp3_role: 'URAP研究アシスタント — 日英翻訳',
+    exp3_desc: '教員主導の比較文学プロジェクト向けに、文学原典の日英翻訳を自動化するPythonスクリプトを構築。翻訳と日本語原文を照合しニュアンス・慣用句・文化的文脈の誤りを検出。より大きな研究コーパス向けにワークフローを継続的に改善。',
+    exp4_org: '女書生態博物館 · インターン', exp4_role: '言語プロジェクトマネージャー',
+    exp4_desc: '女書継承者に歴史・文化的態度・現代の発展についてインタビュー。文字の現代化に取り組む学生や著者と交流し、地元の人々に将来の行動計画を提案。女書の社会言語学的変遷に関する研究記事を執筆し中国のニュースサイト「新浪」に掲載。',
+    exp5_org: 'グラミン銀行 · インターン', exp5_role: '市場調査インタビュアー',
+    exp5_desc: '中国の山西省の中小企業経営者にインタビューし、収益・競争・資本コストについての課題を調査し、グラミン銀行のローンサービスの広報資料を配布。中小企業の障壁とマイクロファイナンスの効果についての記事を執筆し中国発展ブリーフに掲載。',
+    exp6_org: 'Beyond Horizon · インターン', exp6_role: '英語チューター',
+    exp6_desc: 'Zoomを通じて台湾の小学生に英語を指導し、学生のニーズに合わせた英中バイリンガルの教材ワークブックを開発。',
+  },
+};
+
+let currentLang = 'en';
+
+let PAGE_HEADINGS = {
   projects:   'Projects',
   experience: 'Experience',
   fun:        'Fun',
 };
 const scrambledPages = new Set();
+
+function setLang(lang) {
+  currentLang = lang;
+  const s = STRINGS[lang];
+
+  // lang buttons + body font class
+  document.querySelectorAll('.lang-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.lang === lang));
+  document.body.className = lang === 'en' ? '' : 'lang-' + lang;
+  localStorage.setItem('lang', lang);
+
+  // hero tag
+  document.querySelector('.hero-tag').textContent = s.tag;
+
+  // nav items
+  ['home','projects','experience','fun'].forEach((id, i) => {
+    const nb = document.getElementById('nav-' + id);
+    if (nb) nb.textContent = s.nav[i];
+    const bb = document.getElementById('btn-' + id);
+    if (bb) {
+      if (i === 0) bb.textContent = s.nav[i];
+      else bb.innerHTML = s.nav[i] + ' <span class="btn-arrow">→</span>';
+    }
+  });
+
+  // data-i18n (textContent)
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const val = s[el.dataset.i18n];
+    if (val !== undefined) el.textContent = val;
+  });
+
+  // data-i18n-html (innerHTML)
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const val = s[el.dataset.i18nHtml];
+    if (val !== undefined) el.innerHTML = val;
+  });
+
+  // page headings — update text; visited pages update instantly, unvisited will scramble on first visit
+  PAGE_HEADINGS = s.headings;
+  ['projects','experience','fun'].forEach(p => {
+    const el = document.getElementById('heading-' + p);
+    if (!el) return;
+    if (scrambledPages.has(p)) {
+      el.textContent = PAGE_HEADINGS[p];
+    } else {
+      el.innerHTML = '';
+    }
+  });
+}
 
 function showPage(id, pushHash = true) {
   if (!PAGES.includes(id)) id = 'home';
@@ -949,7 +1160,7 @@ function showPage(id, pushHash = true) {
   if (PAGE_HEADINGS[id] && !scrambledPages.has(id)) {
     scrambledPages.add(id);
     const el = document.getElementById('heading-'+id);
-    if (el) scrambleText(el, PAGE_HEADINGS[id], EN_CHARS, 48, 420);
+    if (el) scrambleText(el, PAGE_HEADINGS[id], scramblePool(), 48, 420);
   }
 }
 
@@ -963,8 +1174,12 @@ function triggerFadeIns() {
    GLITCH SCRAMBLE
 ───────────────────────────────────────────── */
 const EN_CHARS = "abcdefghijklmnopqrstuvwxyz,'.! ";
-const JA_CHARS = 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんジェイ';
-const ZH_CHARS = '你好我是姜宇谦的在学习语言计算科技';
+const JA_CHARS = 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんがぎぐげござじずぜぞだぢづでどばびぶべぼアイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンプロジェクト経歴趣味紹介語言文字日本';
+const ZH_CHARS = '你好我是姜宇谦的在学习语言计算科技一二三四五六七八九十人大中小上下左右东西南北天地山水风云日月年月时分秒说话读写听看来去开关多少快慢新旧高低长短轻重项目经历趣味简介';
+
+function scramblePool() {
+  return currentLang === 'zh' ? ZH_CHARS : currentLang === 'ja' ? JA_CHARS : EN_CHARS;
+}
 
 function scrambleText(el, text, pool, stagger, dur) {
   el.innerHTML = '';
@@ -993,6 +1208,8 @@ function scrambleText(el, text, pool, stagger, dur) {
 window.addEventListener('DOMContentLoaded', () => {
   const initial = location.hash.replace('#', '') || 'home';
   showPage(initial, false);
+  const savedLang = localStorage.getItem('lang') || 'en';
+  if (savedLang !== 'en') setLang(savedLang);
   setTimeout(() => scrambleText(document.getElementById('hero-title'), "Hi, I'm Jay!", EN_CHARS, 52, 480), 300);
   setTimeout(() => scrambleText(document.getElementById('hero-ja'), 'こんにちは、ジェイです!', JA_CHARS, 58, 380), 1150);
   setTimeout(() => scrambleText(document.getElementById('hero-zh'), '你好，我是姜宇谦!', ZH_CHARS, 58, 380), 1850);
