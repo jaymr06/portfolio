@@ -721,6 +721,22 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
         <p class="page-subheading" data-i18n="sub_experience">work, research, and skills</p>
         <div class="exp-list">
           <div class="exp-item">
+            <div class="exp-period">Aug – Dec 2026<br>Berkeley, CA</div>
+            <div>
+              <div class="exp-org" data-i18n="exp7_org">UC Berkeley Student Learning Center</div>
+              <div class="exp-role" data-i18n="exp7_role">Mathematics &amp; Statistics Peer Tutor</div>
+              <div class="exp-desc" data-i18n="exp7_desc">Selected as a peer tutor supporting UC Berkeley undergraduates in mathematics and statistics through the Student Learning Center's tutoring program.</div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-period">Jul 2026 — present<br>Remote</div>
+            <div>
+              <div class="exp-org" data-i18n="exp8_org">Open Project @ Berkeley · CloudTCP.ai</div>
+              <div class="exp-role" data-i18n="exp8_role">Software Engineer</div>
+              <div class="exp-desc" data-i18n="exp8_desc">Build the geospatial pipeline for CloudTCP.ai (Traffic Patterns LLC), an automated traffic-control-plan platform, on a 15-engineer client-project team delivered through Berkeley's Open Project. Apply computer-vision techniques to aerial and street-level imagery and OpenStreetMap data to detect road features that feed automated traffic-control-plan generation.</div>
+            </div>
+          </div>
+          <div class="exp-item">
             <div class="exp-period">Jun 2026 — present<br>Remote</div>
             <div>
               <div class="exp-org" data-i18n="exp1_org">FlyRank AI · Internship</div>
@@ -989,7 +1005,7 @@ const STRINGS = {
     proj4_name: 'SightLine',
     proj4_desc: 'Contributed to a 15-member team building an end-to-end ML pipeline that ingests video from Meta Ray-Ban glasses and generates a 60-second daily highlight recap. Built a Python NLP module using transformer-based models to extract semantic context from audio transcripts.',
     exp1_org: 'FlyRank AI · Internship', exp1_role: 'Machine Learning Intern',
-    exp1_desc: 'Interning at FlyRank AI, focusing on machine learning for organic growth automation. Working with AI and ML algorithms in a fast-paced startup environment.',
+    exp1_desc: 'Interning at FlyRank AI, focusing on machine learning for organic growth automation.',
     exp2_org: 'UC Berkeley · LRAP', exp2_role: 'LRAP Research Assistant — Xaitsnoo',
     exp2_desc: 'Completed audio transcriptions and phonology work on linguistic databases. Wrote Python scripts to scrape and organize linguistic data into a dictionary. Used React and Ariakit to build the front-end of a culturally accurate linguistic database for the Xaitsnoo language.',
     exp3_org: 'UC Berkeley · URAP', exp3_role: 'URAP Research Assistant — Japanese–English Translation',
@@ -1000,6 +1016,10 @@ const STRINGS = {
     exp5_desc: 'Conducted interviews with small business owners in Shanxi to investigate challenges in revenue, competition, and capital costs. Distributed outreach materials about Grameen Bank\'s loan services. Wrote an article on obstacles facing small businesses and how microfinance addresses them — published in China Development Brief.',
     exp6_org: 'Beyond Horizon · Internship', exp6_role: 'English Tutor',
     exp6_desc: 'Taught English to underprivileged elementary school students in Taiwan over Zoom. Developed bilingual English–Chinese educational workbooks tailored to student needs.',
+    exp7_org: 'UC Berkeley Student Learning Center', exp7_role: 'Mathematics & Statistics Peer Tutor',
+    exp7_desc: 'Selected as a peer tutor supporting UC Berkeley undergraduates in mathematics and statistics through the Student Learning Center\'s tutoring program.',
+    exp8_org: 'Open Project @ Berkeley · CloudTCP.ai', exp8_role: 'Software Engineer',
+    exp8_desc: 'Building the geospatial pipeline for CloudTCP.ai (Traffic Patterns LLC), an automated traffic-control-plan platform, on a 15-engineer client-project team delivered through Berkeley\'s Open Project. Applying computer-vision techniques to aerial and street-level imagery and OpenStreetMap data to detect road features that feed automated traffic-control-plan generation.',
   },
   zh: {
     tag: '加州大学伯克利分校 · 2029届',
@@ -1031,7 +1051,7 @@ const STRINGS = {
     proj4_name: 'SightLine',
     proj4_desc: '参与15人团队构建端到端ML流水线——从Meta Ray-Ban眼镜摄取视频，通过视频与语音星系生成每日的60秒精彩回顾。我使用了Transformer模型，从音频中提取语义上下文的Python NLP模块。',
     exp1_org: 'FlyRank AI · 实习', exp1_role: '机器学习实习生',
-    exp1_desc: '我在FlyRank AI实习，专注于有机增长自动化的机器学习方向，在快节奏创业环境中应用AI与ML算法。',
+    exp1_desc: '我在FlyRank AI实习，专注于有机增长自动化的机器学习方向。',
     exp2_org: '加州大学伯克利分校 · LRAP', exp2_role: 'LRAP研究助理 — Xaitsnoo项目',
     exp2_desc: '我完成了语言数据库的音频转录与音韵学工作，编Python脚本抓取并整理语言数据至词典，用了React与Ariakit创作了Xaitsnoo语言数据库的文化准确前端界面。',
     exp3_org: '加州大学伯克利分校 · URAP', exp3_role: 'URAP研究助理 — 日英翻译',
@@ -1042,6 +1062,10 @@ const STRINGS = {
     exp5_desc: '我赴山西对小企业主开展访谈，调查营收、竞争与资本成本方面的困难。发放了格莱珉银行贷款服务推广材料，并撰写关于小企业面临的障碍及小额信贷应对之策的文章，发表于中国发展简报。',
     exp6_org: 'Beyond Horizon · 实习', exp6_role: '英语辅导老师',
     exp6_desc: '我通过Zoom为台湾小学生教授英语，编写符合学生需求的中英双语教育练习册。',
+    exp7_org: '加州大学伯克利分校 学生学习中心', exp7_role: '数学与统计辅导助教',
+    exp7_desc: '在伯克利学生学习中心当任辅导助教，为本科生提供数学与统计课程的辅导与支持。',
+    exp8_org: 'Open Project @ Berkeley · CloudTCP.ai', exp8_role: '软件工程师',
+    exp8_desc: '通过伯克利Open Project组织，在一个15人的团队中参与CloudTCP.ai（Traffic Patterns LLC）自动化交通控制方案平台的开发。应用计算机视觉技术，处理航拍与街景图像及OpenStreetMap数据，识别道路特征，为自动化交通控制方案生成提供数据支持。',
   },
   ja: {
     tag: 'UCバークレー · 2029年卒',
@@ -1084,6 +1108,10 @@ const STRINGS = {
     exp5_desc: '中国の山西省の中小企業経営者にインタビューし、収益・競争・資本コストについての課題を調査し、グラミン銀行のローンサービスの広報資料を配布。中小企業の障壁とマイクロファイナンスの効果についての記事を執筆し中国発展ブリーフに掲載。',
     exp6_org: 'Beyond Horizon · インターン', exp6_role: '英語チューター',
     exp6_desc: 'Zoomを通じて台湾の小学生に英語を指導し、学生のニーズに合わせた英中バイリンガルの教材ワークブックを開発。',
+    exp7_org: 'UCバークレー · 学生学習センター', exp7_role: '数学・統計ピアチューター',
+    exp7_desc: 'バークレー学生学習センターのチュータリングプログラムに、数学・統計を学ぶ学部生をサポートするピアチューター。',
+    exp8_org: 'Open Project @ Berkeley · CloudTCP.ai', exp8_role: 'ソフトウェアエンジニア',
+    exp8_desc: 'バークレーのOpen Projectに15名のチームの一員として、自動化交通制御計画プラットフォームCloudTCP.ai（Traffic Patterns LLC）の地理空間パイプラインを構築。航空・街路レベルの画像およびOpenStreetMapデータにコンピュータビジョン技術を適用し、交通制御計画の自動生成に用いる道路特徴を検出。',
   },
 };
 
