@@ -118,15 +118,14 @@ nav.scrolled { border-color: var(--border); }
 .nav-links button.active-nav::after { width: 100%; }
 
 body.lang-zh { --font-en: 'Source Serif 4', 'Georgia', serif, 'LXGW WenKai Mono TC', monospace; }
-body.lang-ja { --font-en: 'Source Serif 4', 'Georgia', serif, 'Zen Kurenaido', serif; }
-body.lang-zh .project-desc, body.lang-ja .project-desc,
-body.lang-zh .exp-desc,     body.lang-ja .exp-desc,
-body.lang-zh .gallery-desc, body.lang-ja .gallery-desc { font-size: 15px; font-weight: 400; line-height: 1.95; }
-body.lang-zh .hero-bio p,   body.lang-ja .hero-bio p   { font-size: 16px; font-weight: 400; line-height: 1.95; }
-body.lang-zh .page-subheading, body.lang-ja .page-subheading { font-size: 13px; letter-spacing: 0; }
-body.lang-zh .project-name, body.lang-ja .project-name,
-body.lang-zh .exp-role,     body.lang-ja .exp-role,
-body.lang-zh .gallery-title,body.lang-ja .gallery-title { font-style: normal; }
+body.lang-zh .project-desc,
+body.lang-zh .exp-desc,
+body.lang-zh .gallery-desc { font-size: 15px; font-weight: 400; line-height: 1.95; }
+body.lang-zh .hero-bio p   { font-size: 16px; font-weight: 400; line-height: 1.95; }
+body.lang-zh .page-subheading { font-size: 13px; letter-spacing: 0; }
+body.lang-zh .project-name,
+body.lang-zh .exp-role,
+body.lang-zh .gallery-title { font-style: normal; }
 
 /* ── LANG SWITCH ── */
 .lang-switch { position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 4px; }
@@ -561,7 +560,6 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
   .gallery-item, .gallery-item.reverse { flex-direction: column; gap: 24px; }
   .gallery-img { width: 100%; max-width: 100%; flex-shrink: 0; }
   .bottom-nav { padding: 0 24px 20px; }
-  body.lang-ja .bottom-btn { font-size: 10px; padding: 9px 22px; }
 }
 </style>
 </head>
@@ -579,8 +577,6 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
     <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
     <span class="lang-sep">|</span>
     <button class="lang-btn" data-lang="zh" onclick="setLang('zh')">中</button>
-    <span class="lang-sep">|</span>
-    <button class="lang-btn" data-lang="ja" onclick="setLang('ja')">日</button>
   </div>
   <ul class="nav-links">
     <li><button onclick="showPage('home')" class="active-nav" id="nav-home">intro</button></li>
@@ -607,7 +603,7 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
         </div>
       </div>
       <div class="hero-bio">
-        <p data-i18n-html="bio1">I'm a CS and Linguistics double major at Berkeley, focused on NLP and ML. I've worked on <em>SightLine</em>, a ML Day-Recap App using Meta Ray-Ban Glasses, website development for <em>Xaitsnoo</em>, a critically endangered language, and contributed to Japanese–English translation research through Berkeley's URAP.</p>
+        <p data-i18n-html="bio1">I'm a CS and Linguistics double major at Berkeley, focused on NLP and ML. I've worked on <em>SightLine</em>, a ML Day-Recap App using Meta Ray-Ban Glasses, website development for <em>Xaitsnoo</em>, a critically endangered language, and contributed to Japanese–English translation research through Berkeley's URAP. This semester, I joined <em>Geopogo</em> as an AI training researcher and started speech-perception research at <em>BAIR</em>.</p>
         <p data-i18n-html="bio2">I like <a href="#" onclick="showPage('projects');return false;">building projects</a>, <a href="#" onclick="showPage('fun');return false;">learning languages</a>, and getting to know new people. Don't hesitate to reach out if you want to talk about anything CS or Linguistics related, or, anything, really.</p>
       </div>
       <div class="hero-meta">
@@ -720,6 +716,22 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
         <h2 class="page-heading" id="heading-experience"></h2>
         <p class="page-subheading" data-i18n="sub_experience">work, research, and skills</p>
         <div class="exp-list">
+          <div class="exp-item">
+            <div class="exp-period">Aug 2026 — present<br>Berkeley, CA</div>
+            <div>
+              <div class="exp-org" data-i18n="exp9_org">Berkeley Artificial Intelligence Research (BAIR)</div>
+              <div class="exp-role" data-i18n="exp9_role">Undergraduate Researcher</div>
+              <div class="exp-desc" data-i18n="exp9_desc">Conducting undergraduate research on speech perception and sensing at BAIR.</div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-period">Aug 2026 — present<br>Berkeley, CA</div>
+            <div>
+              <div class="exp-org" data-i18n="exp10_org">Geopogo</div>
+              <div class="exp-role" data-i18n="exp10_role">AI Training Researcher</div>
+              <div class="exp-desc" data-i18n="exp10_desc">Training Claude with architecture-design skills for Geopogo's Claude-to-Revit plugin, in partnership with Anthropic and Autodesk. Working with graphic and dimensional data from Revit on a small student team mentored by Geopogo's CEO, as part of UC Berkeley's Data Science Discovery program.</div>
+            </div>
+          </div>
           <div class="exp-item">
             <div class="exp-period">Aug – Dec 2026<br>Berkeley, CA</div>
             <div>
@@ -978,7 +990,7 @@ const STRINGS = {
     label_sketches: 'Sketches',
     label_lang: 'Language Learning',
     label_writing: 'Writing',
-    bio1: 'I\'m a CS and Linguistics double major at Berkeley, focused on NLP and ML. I\'ve worked on <em>SightLine</em>, a ML Day-Recap App using Meta Ray-Ban Glasses, website development for <em>Xaitsnoo</em>, a critically endangered language, and contributed to Japanese–English translation research through Berkeley\'s URAP.',
+    bio1: 'I\'m a CS and Linguistics double major at Berkeley, focused on NLP and ML. I\'ve worked on <em>SightLine</em>, a ML Day-Recap App using Meta Ray-Ban Glasses, website development for <em>Xaitsnoo</em>, a critically endangered language, and contributed to Japanese–English translation research through Berkeley\'s URAP. This semester, I joined <em>Geopogo</em> as an AI training researcher and started speech-perception research at <em>BAIR</em>.',
     bio2: 'I like <a href="#" onclick="showPage(\'projects\');return false;">building projects</a>, <a href="#" onclick="showPage(\'fun\');return false;">learning languages</a>, and getting to know new people. Don\'t hesitate to reach out if you want to talk about anything CS or Linguistics related, or, anything, really.',
     art2_title: 'DPD (Digital Painting Decal)',
     art2_desc: 'I joined the Digital Painting Decal on campus during my freshman spring, and it was one of the best experiences I ever had. Not only did I meet my current girlfriend there, but I also had the chance to make this as my final project! I had a lot of fun learning how to draw.',
@@ -1010,6 +1022,10 @@ const STRINGS = {
     exp7_desc: 'Selected as a peer tutor supporting UC Berkeley undergraduates in mathematics and statistics through the Student Learning Center\'s tutoring program.',
     exp8_org: 'Open Project @ Berkeley · CloudTCP.ai', exp8_role: 'Software Engineer',
     exp8_desc: 'Building the geospatial pipeline for CloudTCP.ai (Traffic Patterns LLC), an automated traffic-control-plan platform, on a 15-engineer client-project team delivered through Berkeley\'s Open Project. Applying computer-vision techniques to aerial and street-level imagery and OpenStreetMap data to detect road features that feed automated traffic-control-plan generation.',
+    exp9_org: 'Berkeley Artificial Intelligence Research (BAIR)', exp9_role: 'Undergraduate Researcher',
+    exp9_desc: 'Conducting undergraduate research on speech perception and sensing at BAIR.',
+    exp10_org: 'Geopogo', exp10_role: 'AI Training Researcher',
+    exp10_desc: 'Training Claude with architecture-design skills for Geopogo\'s Claude-to-Revit plugin, in partnership with Anthropic and Autodesk. Working with graphic and dimensional data from Revit on a small student team mentored by Geopogo\'s CEO, as part of UC Berkeley\'s Data Science Discovery program.',
   },
   zh: {
     tag: '加州大学伯克利分校 · 2029届',
@@ -1022,7 +1038,7 @@ const STRINGS = {
     label_sketches: '画作',
     label_lang: '语言学习',
     label_writing: '写作',
-    bio1: '我是伯克利大学计算机科学与语言学的双学位学生，主要学习自然语言处理和机器学习。我曾参与开发<em>SightLine</em>——一个基于Meta Ray-Ban眼镜的AI日记项目；为濒危语言<em>Xaitsnoo</em>构建线上词典；并通过伯克利的URAP科研项目参与日英翻译研究。',
+    bio1: '我是伯克利大学计算机科学与语言学的双学位学生，主要学习自然语言处理和机器学习。我曾参与开发<em>SightLine</em>——一个基于Meta Ray-Ban眼镜的AI日记项目；为濒危语言<em>Xaitsnoo</em>构建线上词典；并通过伯克利的URAP科研项目参与日英翻译研究。这学期，我加入了<em>Geopogo</em>担任AI训练研究员，并开始在<em>BAIR</em>从事语音感知相关的研究。',
     bio2: '我喜欢<a href="#" onclick="showPage(\'projects\');return false;">做项目</a>、<a href="#" onclick="showPage(\'fun\');return false;">学习语言</a>，认识新同学！如果你想聊聊天，无论有关计算机科学、语言学，或者任何话题，随时欢迎！',
     art2_title: '神奇数字马戏团',
     art2_desc: '我大一下学期加入了校园电子绘画课，是我在伯克利上过的最宝贵的课之一。我不仅在那里认识了我的女朋友，还画了这幅画当作我的最终作品。有这个机会和大家一起学画画，超好玩。',
@@ -1054,50 +1070,10 @@ const STRINGS = {
     exp7_desc: '在伯克利学生学习中心当任辅导助教，为本科生提供数学与统计课程的辅导与支持。',
     exp8_org: 'Open Project @ Berkeley · CloudTCP.ai', exp8_role: '软件工程师',
     exp8_desc: '通过伯克利Open Project组织，在一个15人的团队中参与CloudTCP.ai（Traffic Patterns LLC）自动化交通控制方案平台的开发。应用计算机视觉技术，处理航拍与街景图像及OpenStreetMap数据，识别道路特征，为自动化交通控制方案生成提供数据支持。',
-  },
-  ja: {
-    tag: 'UCバークレー · 2029年卒',
-    nav: ['紹介','プロジェクト','経歴','趣味'],
-    headings: { projects:'プロジェクト', experience:'経歴', fun:'趣味' },
-    sub_projects: '厳選作品 · 2024–2026',
-    sub_experience: '仕事・研究・スキル',
-    sub_fun: 'イラスト・語学・その他',
-    label_skills: '技術スキル',
-    label_sketches: 'イラスト',
-    label_lang: '語学学習',
-    label_writing: 'ライティング',
-    bio1: '僕はバークレー大学でCS・言語学を専攻し、NLPと機械学習を中心として勉強しています。<em>SightLine</em>（レイバンメタグラスを使ったAI日記サイト）の開発、消滅危機言語<em>Xaitsnoo</em>のデジタル辞典の構築、そしてURAP研究プログラムでの日英翻訳研究などに携わりました。',
-    bio2: '<a href="#" onclick="showPage(\'projects\');return false;">プロジェクト作り</a>、<a href="#" onclick="showPage(\'fun\');return false;">語学学習</a>、友達を作るのが好きです。CS・言語学・なんでも話したいことがあったら、気軽に話しかけてください！',
-    art2_title: 'ザ・アメイジング・デジタル・サーカス',
-    art2_desc: '僕一年生の春学期に、デジタルペインティングDecalに参加し、最高のチョイスでした。現在の彼女と出会ったのもそこで、ファイナルプロジェクトとしてこの絵を描きました。絵を学ぶのがめちゃくちゃ楽しかったです。',
-    art1_title: 'まふ　クリサラス',
-    art1_desc: 'D&Dのオリキャラまふ（仲間のTeotl・Noxとともに）を初めて描いた作品。後に「地獄の討論クラブ」という自作ゲームのインスピレーションになりました。名前の由来は「まふまふ」という大好きな歌い手です！。',
-    n2_title: 'JLPT N2',
-    n2_desc: '日本語能力試験N2（第2レベル）に合格しました。現在N1に向けて勉強中です！',
-    folio_title: 'ライティングポートフォリオ',
-    folio_desc: 'たくさんのクリエイティブライティングを書いてきました！興味があればぜひご覧ください。だからCSがうまくいかなかったら転向するかも……（苦笑）',
-    proj1_name: 'Xaitsnooコミュニティ辞書',
-    proj1_desc: '消滅危機言語Xaitsnooのデジタル辞書、Next.jsで構築しVercelにデプロイしました。バークレーのLRAP研究の一環として、コーパスのドキュメントとNLPパイプラインの基盤を提供しました。',
-    proj2_name: 'Dice Vision',
-    proj2_desc: 'ファインチューニングしたYOLOv8モデル（mAP50約0.966）によるリアルタイムサイコロ検出サイトを建築。FastAPIのバックエンド、モバイルブラウザのフロントエンド。Hugging Face SpacesとVercelへのデプロイを目指しています。',
-    proj3_name: 'Debate Club from Hell',
-    proj3_desc: 'D&DのオリキャラまふのAIバージョンが登場するインタラクティブなブラウザ討伐ゲーム。Vercelにデプロイしました。',
-    proj4_name: 'SightLine',
-    proj4_desc: '15人チームでエンドツーエンドのMLパイプラインを構築し、レイバンメタグラス（AI搭載のスマートグラス）から映像を取り込み60秒の1日ハイライトを自動生成。Transformerベースのモデルで音声書き起こしから意味的文脈を抽出するPython NLPモジュールを担当。',
-    exp2_org: 'UCバークレー · LRAP', exp2_role: 'LRAP研究アシスタント — Xaitsnooプロジェクト',
-    exp2_desc: '言語データベースの音声書き起こしと音韻論作業を完了。PythonスクリプトでXaitsnoo言語データを収集・整理し辞書を構築。ReactとAriakitで文化的に正確なフロントエンドを開発。',
-    exp3_org: 'UCバークレー · URAP', exp3_role: 'URAP研究アシスタント — 日英翻訳',
-    exp3_desc: '教員主導の比較文学プロジェクト向けに、文学原典の日英翻訳を自動化するPythonスクリプトを構築。翻訳と日本語原文を照合しニュアンス・慣用句・文化的文脈の誤りを検出。より大きな研究コーパス向けにワークフローを継続的に改善。',
-    exp4_org: '女書生態博物館 · インターン', exp4_role: '言語プロジェクトマネージャー',
-    exp4_desc: '女書継承者に歴史・文化的態度・現代の発展についてインタビュー。文字の現代化に取り組む学生や著者と交流し、地元の人々に将来の行動計画を提案。女書の社会言語学的変遷に関する研究記事を執筆し中国のニュースサイト「新浪」に掲載。',
-    exp5_org: 'グラミン銀行 · インターン', exp5_role: '市場調査インタビュアー',
-    exp5_desc: '中国の山西省の中小企業経営者にインタビューし、収益・競争・資本コストについての課題を調査し、グラミン銀行のローンサービスの広報資料を配布。中小企業の障壁とマイクロファイナンスの効果についての記事を執筆し中国発展ブリーフに掲載。',
-    exp6_org: 'Beyond Horizon · インターン', exp6_role: '英語チューター',
-    exp6_desc: 'Zoomを通じて台湾の小学生に英語を指導し、学生のニーズに合わせた英中バイリンガルの教材ワークブックを開発。',
-    exp7_org: 'UCバークレー · 学生学習センター', exp7_role: '数学・統計ピアチューター',
-    exp7_desc: 'バークレー学生学習センターのチュータリングプログラムに、数学・統計を学ぶ学部生をサポートするピアチューター。',
-    exp8_org: 'Open Project @ Berkeley · CloudTCP.ai', exp8_role: 'ソフトウェアエンジニア',
-    exp8_desc: 'バークレーのOpen Projectに15名のチームの一員として、自動化交通制御計画プラットフォームCloudTCP.ai（Traffic Patterns LLC）の地理空間パイプラインを構築。航空・街路レベルの画像およびOpenStreetMapデータにコンピュータビジョン技術を適用し、交通制御計画の自動生成に用いる道路特徴を検出。',
+    exp9_org: '伯克利人工智能研究实验室 (BAIR)', exp9_role: '本科生研究员',
+    exp9_desc: '在BAIR从事语音感知与传感相关的本科生研究。',
+    exp10_org: 'Geopogo', exp10_role: 'AI训练研究员',
+    exp10_desc: '为Geopogo的Claude-to-Revit插件（与Anthropic及Autodesk合作）训练Claude的建筑设计技能。作为伯克利Data Science Discovery项目的一员，在Geopogo CEO指导的小型学生团队中处理Revit的图形与尺寸数据。',
   },
 };
 
@@ -1192,7 +1168,7 @@ const JA_CHARS = 'あいうえおかきくけこさしすせそたちつてと�
 const ZH_CHARS = '你好我是姜宇谦的在学习语言计算科技一二三四五六七八九十人大中小上下左右东西南北天地山水风云日月年月时分秒说话读写听看来去开关多少快慢新旧高低长短轻重项目经历趣味简介';
 
 function scramblePool() {
-  return currentLang === 'zh' ? ZH_CHARS : currentLang === 'ja' ? JA_CHARS : EN_CHARS;
+  return currentLang === 'zh' ? ZH_CHARS : EN_CHARS;
 }
 
 function scrambleText(el, text, pool, stagger, dur) {
@@ -1223,7 +1199,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const initial = location.hash.replace('#', '') || 'home';
   showPage(initial, false);
   const savedLang = localStorage.getItem('lang') || 'en';
-  if (savedLang !== 'en') setLang(savedLang);
+  if (savedLang !== 'en' && STRINGS[savedLang]) setLang(savedLang);
   setTimeout(() => scrambleText(document.getElementById('hero-title'), "Hi, I'm Jay!", EN_CHARS, 52, 480), 300);
   setTimeout(() => scrambleText(document.getElementById('hero-ja'), 'こんにちは、ジェイです!', JA_CHARS, 58, 380), 1150);
   setTimeout(() => scrambleText(document.getElementById('hero-zh'), '你好，我是姜宇谦!', ZH_CHARS, 58, 380), 1850);
