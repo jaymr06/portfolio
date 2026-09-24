@@ -359,6 +359,7 @@ body.lang-zh .gallery-title { font-style: normal; }
 }
 .project-item:last-child { border-bottom: 1px solid var(--border); }
 a.project-item, a.exp-item { color: inherit; text-decoration: none; display: grid; }
+div.project-item { cursor: default; }
 a.gallery-item { color: inherit; text-decoration: none; display: flex; }
 .project-num {
   font-family: var(--font-en); font-size: 10px;
@@ -603,7 +604,7 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
         </div>
       </div>
       <div class="hero-bio">
-        <p data-i18n-html="bio1">I'm a CS and Linguistics double major at Berkeley, focused on NLP and ML. I've worked on <em>SightLine</em>, a ML Day-Recap App using Meta Ray-Ban Glasses, website development for <em>Xaitsnoo</em>, a critically endangered language, and contributed to Japanese–English translation research through Berkeley's URAP. This semester, I joined <em>Geopogo</em> as an AI training researcher and started speech-perception research at <em>BAIR</em>.</p>
+        <p data-i18n-html="bio1">I'm a CS and Linguistics double major at Berkeley, focused on NLP and ML. I've worked on <em>SightLine</em>, a ML Day-Recap App using Meta Ray-Ban Glasses, website development for <em>Xaitsnoo</em>, a critically endangered language, and contributed to Japanese–English translation research through Berkeley's URAP. This semester, I joined <em>Geopogo</em> as an AI training researcher and started building an autonomous maze-solving robot in <em>Micromouse</em>.</p>
         <p data-i18n-html="bio2">I like <a href="#" onclick="showPage('projects');return false;">building projects</a>, <a href="#" onclick="showPage('fun');return false;">learning languages</a>, and getting to know new people. Don't hesitate to reach out if you want to talk about anything CS or Linguistics related, or, anything, really.</p>
       </div>
       <div class="hero-meta">
@@ -646,9 +647,36 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
         <h2 class="page-heading" id="heading-projects"></h2>
         <p class="page-subheading" data-i18n="sub_projects">selected work · 2024–2026</p>
         <div class="project-list">
-          <a class="project-item" href="https://github.com/Xaitsnoo-Community-Dictionary-Project/xaitsnoo" target="_blank" rel="noopener">
+          <a class="project-item" href="https://github.com/666Kevinyang666/Sign_Language_Translation" target="_blank" rel="noopener">
             <div>
               <div class="project-num">01</div>
+              <div class="project-name" data-i18n="proj5_name">Signage</div>
+              <div class="project-desc" data-i18n="proj5_desc">Real-time ASL-to-English translator that turns webcam or phone video into live English subtitles. 2nd Prize, AI Assistants Track ($4,500 AWS credits) at The Executable World Hackathon, built on a 5-person team. Trained a TensorFlow.js recognizer on MediaPipe Holistic pose keypoints covering 3,272 ASL signs (70% top-1, 84% top-5), with the Claude API composing fluent English from the recognized sign sequences.</div>
+              <div class="project-tags">
+                <span class="tag">TensorFlow.js</span><span class="tag">MediaPipe</span><span class="tag">Claude API</span><span class="tag">WebSockets</span><span class="tag">Hackathon</span>
+              </div>
+            </div>
+            <div class="project-preview">
+              <img src="assets/signage-team.jpg" alt="Signage team at The Executable World Hackathon" style="object-position: center 35%">
+              <span class="project-arrow">↗&#xFE0E;</span>
+            </div>
+          </a>
+          <div class="project-item">
+            <div>
+              <div class="project-num">02</div>
+              <div class="project-name" data-i18n="proj6_name">Micromouse</div>
+              <div class="project-desc" data-i18n="proj6_desc">An autonomous maze-solving robot built to IEEE Micromouse competition standards on a 2-person team through IEEE at Berkeley's Micromouse DeCal. Assembling the mouse from a bare PCB (through-hole and SMD soldering) and programming its RP2040 microcontroller in CircuitPython for sensor-based navigation and PID motor control.</div>
+              <div class="project-tags">
+                <span class="tag">CircuitPython</span><span class="tag">Embedded Systems</span><span class="tag">PID Control</span><span class="tag">PCB Assembly</span>
+              </div>
+            </div>
+            <div class="project-preview">
+              <img src="assets/micromouse-pcb.jpg" alt="Micromouse PCB with Raspberry Pi Pico">
+            </div>
+          </div>
+          <a class="project-item" href="https://github.com/Xaitsnoo-Community-Dictionary-Project/xaitsnoo" target="_blank" rel="noopener">
+            <div>
+              <div class="project-num">03</div>
               <div class="project-name" data-i18n="proj1_name">Xaitsnoo Community Dictionary</div>
               <div class="project-desc" data-i18n="proj1_desc">A digital community dictionary for Xaitsnoo, a critically endangered language. Built with Next.js and deployed to Vercel as part of a URAP research engagement. Infrastructure for corpus documentation and an NLP pipeline.</div>
               <div class="project-tags">
@@ -662,7 +690,7 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
           </a>
           <a class="project-item" href="https://github.com/jaymr06/dice-vision" target="_blank" rel="noopener">
             <div>
-              <div class="project-num">02</div>
+              <div class="project-num">04</div>
               <div class="project-name" data-i18n="proj2_name">Dice Vision</div>
               <div class="project-desc" data-i18n="proj2_desc">Real-time dice detection with a fine-tuned YOLOv8 model (mAP50 ~0.966). FastAPI backend, mobile browser frontend. Targeting deployment to Hugging Face Spaces and Vercel.</div>
               <div class="project-tags">
@@ -676,7 +704,7 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
           </a>
           <a class="project-item" href="https://debate-club-hell.vercel.app/" target="_blank" rel="noopener">
             <div>
-              <div class="project-num">03</div>
+              <div class="project-num">05</div>
               <div class="project-name" data-i18n="proj3_name">Debate Club from Hell</div>
               <div class="project-desc" data-i18n="proj3_desc">An interactive browser debate game featuring Mafu, an AI rendition of my D&D OC. Deployed to Vercel.</div>
               <div class="project-tags">
@@ -690,7 +718,7 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
           </a>
           <a class="project-item" href="https://drive.google.com/file/d/19bhnF3zwJTPj_g37s9-ao-iuTKTYZc0_/view?usp=sharing" target="_blank" rel="noopener">
             <div>
-              <div class="project-num">04</div>
+              <div class="project-num">06</div>
               <div class="project-name" data-i18n="proj4_name">SightLine</div>
               <div class="project-desc" data-i18n="proj4_desc">Contributed to a 15-member team building an end-to-end ML pipeline that ingests video from Meta Ray-Ban glasses and generates a 60-second daily highlight recap. Built a Python NLP module using transformer-based models to extract semantic context from audio transcripts.</div>
               <div class="project-tags">
@@ -719,41 +747,33 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
           <div class="exp-item">
             <div class="exp-period">Aug 2026 — present<br>Berkeley, CA</div>
             <div>
-              <div class="exp-org" data-i18n="exp9_org">Berkeley Artificial Intelligence Research (BAIR)</div>
-              <div class="exp-role" data-i18n="exp9_role">Undergraduate Researcher</div>
-              <div class="exp-desc" data-i18n="exp9_desc">Conducting undergraduate research on speech perception and sensing at BAIR.</div>
+              <div class="exp-org" data-i18n="exp10_org">Geopogo</div>
+              <div class="exp-role" data-i18n="exp10_role">AI Training Researcher (Intern)</div>
+              <div class="exp-desc" data-i18n="exp10_desc">Training Claude on architectural design skills for Geopogo's Claude-to-Revit plugin, in partnership with Anthropic and Autodesk. Working with graphic and dimensional data from Revit on a small student team mentored by Geopogo's CEO, as part of UC Berkeley's Data Science Discovery program.</div>
             </div>
           </div>
           <div class="exp-item">
             <div class="exp-period">Aug 2026 — present<br>Berkeley, CA</div>
             <div>
-              <div class="exp-org" data-i18n="exp10_org">Geopogo</div>
-              <div class="exp-role" data-i18n="exp10_role">AI Training Researcher</div>
-              <div class="exp-desc" data-i18n="exp10_desc">Training Claude with architecture-design skills for Geopogo's Claude-to-Revit plugin, in partnership with Anthropic and Autodesk. Working with graphic and dimensional data from Revit on a small student team mentored by Geopogo's CEO, as part of UC Berkeley's Data Science Discovery program.</div>
-            </div>
-          </div>
-          <div class="exp-item">
-            <div class="exp-period">Aug – Dec 2026<br>Berkeley, CA</div>
-            <div>
               <div class="exp-org" data-i18n="exp7_org">UC Berkeley Student Learning Center</div>
               <div class="exp-role" data-i18n="exp7_role">Mathematics &amp; Statistics Peer Tutor</div>
-              <div class="exp-desc" data-i18n="exp7_desc">Selected as a peer tutor supporting UC Berkeley undergraduates in mathematics and statistics through the Student Learning Center's tutoring program.</div>
+              <div class="exp-desc" data-i18n="exp7_desc">Peer tutor in the Student Learning Center's Mathematics &amp; Statistics program, supporting UC Berkeley undergraduates ~7 hrs/week. Support students across Math 3, 16A/B, 52, and 54, covering calculus, linear algebra, and differential equations.</div>
             </div>
           </div>
           <div class="exp-item">
-            <div class="exp-period">Jul 2026 — present<br>Remote</div>
+            <div class="exp-period">Jul 2026 — present<br>Berkeley, CA</div>
             <div>
               <div class="exp-org" data-i18n="exp8_org">Open Project @ Berkeley · CloudTCP.ai</div>
               <div class="exp-role" data-i18n="exp8_role">Software Engineer</div>
-              <div class="exp-desc" data-i18n="exp8_desc">Build the geospatial pipeline for CloudTCP.ai (Traffic Patterns LLC), an automated traffic-control-plan platform, on a 15-engineer client-project team delivered through Berkeley's Open Project. Apply computer-vision techniques to aerial and street-level imagery and OpenStreetMap data to detect road features that feed automated traffic-control-plan generation.</div>
+              <div class="exp-desc" data-i18n="exp8_desc">Build the geospatial pipeline for CloudTCP.ai (Traffic Patterns LLC), an automated traffic-control-plan platform, on a 15-engineer client-project team delivered through Berkeley's Open Project. Apply computer-vision techniques to OpenStreetMap data to detect road features that feed automated traffic-control-plan generation.</div>
             </div>
           </div>
           <div class="exp-item">
-            <div class="exp-period">Jan – May 2026<br>Berkeley, CA</div>
+            <div class="exp-period">Jan – Jun 2026<br>Berkeley, CA</div>
             <div>
-              <div class="exp-org" data-i18n="exp2_org">UC Berkeley · URAP</div>
+              <div class="exp-org" data-i18n="exp2_org">UC Berkeley · LRAP</div>
               <div class="exp-role" data-i18n="exp2_role">LRAP Research Assistant — Xaitsnoo</div>
-              <div class="exp-desc" data-i18n="exp2_desc">Completed audio transcriptions and phonology work on linguistic databases. Wrote Python scripts to scrape and organize linguistic data into a dictionary. Used React and Ariakit to build the front-end of a culturally accurate linguistic database for the Xaitsnoo language.</div>
+              <div class="exp-desc" data-i18n="exp2_desc">Digitized and structured a community-curated lexicon of an endangered language by building and deploying a public-facing React/Ariakit dictionary platform. Conducted audio transcriptions and phonological analysis to validate dictionary entries for phonetic accuracy.</div>
             </div>
           </div>
           <div class="exp-item">
@@ -990,7 +1010,7 @@ const STRINGS = {
     label_sketches: 'Sketches',
     label_lang: 'Language Learning',
     label_writing: 'Writing',
-    bio1: 'I\'m a CS and Linguistics double major at Berkeley, focused on NLP and ML. I\'ve worked on <em>SightLine</em>, a ML Day-Recap App using Meta Ray-Ban Glasses, website development for <em>Xaitsnoo</em>, a critically endangered language, and contributed to Japanese–English translation research through Berkeley\'s URAP. This semester, I joined <em>Geopogo</em> as an AI training researcher and started speech-perception research at <em>BAIR</em>.',
+    bio1: 'I\'m a CS and Linguistics double major at Berkeley, focused on NLP and ML. I\'ve worked on <em>SightLine</em>, a ML Day-Recap App using Meta Ray-Ban Glasses, website development for <em>Xaitsnoo</em>, a critically endangered language, and contributed to Japanese–English translation research through Berkeley\'s URAP. This semester, I joined <em>Geopogo</em> as an AI training researcher and started building an autonomous maze-solving robot for <em>Micromouse</em>.',
     bio2: 'I like <a href="#" onclick="showPage(\'projects\');return false;">building projects</a>, <a href="#" onclick="showPage(\'fun\');return false;">learning languages</a>, and getting to know new people. Don\'t hesitate to reach out if you want to talk about anything CS or Linguistics related, or, anything, really.',
     art2_title: 'DPD (Digital Painting Decal)',
     art2_desc: 'I joined the Digital Painting Decal on campus during my freshman spring, and it was one of the best experiences I ever had. Not only did I meet my current girlfriend there, but I also had the chance to make this as my final project! I had a lot of fun learning how to draw.',
@@ -1000,6 +1020,10 @@ const STRINGS = {
     n2_desc: 'Passed the JLPT N2 (Japanese Language Proficiency Test), the second-highest level. Currently working toward N1!',
     folio_title: 'Writing Portfolio',
     folio_desc: 'I did a lot of creative writing! Here are some excerpts, if you\'re interested. Depending on how this CS thing works out, I might have to pivot... /halfjoking',
+    proj5_name: 'Signage',
+    proj5_desc: 'Real-time ASL-to-English translator that turns webcam or phone video into live English subtitles. 2nd Prize, AI Assistants Track ($4,500 AWS credits) at The Executable World Hackathon, built on a 5-person team. Trained a TensorFlow.js recognizer on MediaPipe Holistic pose keypoints covering 3,272 ASL signs (70% top-1, 84% top-5), with the Claude API composing fluent English from the recognized sign sequences.',
+    proj6_name: 'Micromouse',
+    proj6_desc: 'An autonomous maze-solving robot built to IEEE Micromouse competition standards on a 2-person team through IEEE at Berkeley\'s Micromouse DeCal. Assembling the mouse from a bare PCB (through-hole and SMD soldering) and programming its RP2040 microcontroller in CircuitPython for sensor-based navigation and PID motor control.',
     proj1_name: 'Xaitsnoo Community Dictionary',
     proj1_desc: 'A digital community dictionary for Xaitsnoo, a critically endangered language. Built with Next.js and deployed to Vercel as part of a URAP research engagement. Infrastructure for corpus documentation and an NLP pipeline.',
     proj2_name: 'Dice Vision',
@@ -1009,7 +1033,7 @@ const STRINGS = {
     proj4_name: 'SightLine',
     proj4_desc: 'Contributed to a 15-member team building an end-to-end ML pipeline that ingests video from Meta Ray-Ban glasses and generates a 60-second daily highlight recap. Built a Python NLP module using transformer-based models to extract semantic context from audio transcripts.',
     exp2_org: 'UC Berkeley · LRAP', exp2_role: 'LRAP Research Assistant — Xaitsnoo',
-    exp2_desc: 'Completed audio transcriptions and phonology work on linguistic databases. Wrote Python scripts to scrape and organize linguistic data into a dictionary. Used React and Ariakit to build the front-end of a culturally accurate linguistic database for the Xaitsnoo language.',
+    exp2_desc: 'Digitized and structured a community-curated lexicon of an endangered language by building and deploying a public-facing React/Ariakit dictionary platform. Conducted audio transcriptions and phonological analysis to validate dictionary entries for phonetic accuracy.',
     exp3_org: 'UC Berkeley · URAP', exp3_role: 'URAP Research Assistant — Japanese–English Translation',
     exp3_desc: 'Built a Python script automating Japanese-to-English translation of primary literary sources for a faculty-led Comparative Literature project. Cross-referenced translations against the original Japanese texts to flag nuance, idiom, and cultural-context errors, iteratively refining the workflow for a larger research corpus.',
     exp4_org: 'Nvshu Ecological Museum · Internship', exp4_role: 'Linguistic Project Manager',
@@ -1019,13 +1043,11 @@ const STRINGS = {
     exp6_org: 'Beyond Horizon · Internship', exp6_role: 'English Tutor',
     exp6_desc: 'Taught English to underprivileged elementary school students in Taiwan over Zoom. Developed bilingual English–Chinese educational workbooks tailored to student needs.',
     exp7_org: 'UC Berkeley Student Learning Center', exp7_role: 'Mathematics & Statistics Peer Tutor',
-    exp7_desc: 'Selected as a peer tutor supporting UC Berkeley undergraduates in mathematics and statistics through the Student Learning Center\'s tutoring program.',
+    exp7_desc: 'Peer tutor in the Student Learning Center\'s Mathematics & Statistics program, supporting UC Berkeley undergraduates ~7 hrs/week. Support students across Math 3, 16A/B, 52, and 54, covering calculus, linear algebra, and differential equations.',
     exp8_org: 'Open Project @ Berkeley · CloudTCP.ai', exp8_role: 'Software Engineer',
-    exp8_desc: 'Building the geospatial pipeline for CloudTCP.ai (Traffic Patterns LLC), an automated traffic-control-plan platform, on a 15-engineer client-project team delivered through Berkeley\'s Open Project. Applying computer-vision techniques to aerial and street-level imagery and OpenStreetMap data to detect road features that feed automated traffic-control-plan generation.',
-    exp9_org: 'Berkeley Artificial Intelligence Research (BAIR)', exp9_role: 'Undergraduate Researcher',
-    exp9_desc: 'Conducting undergraduate research on speech perception and sensing at BAIR.',
-    exp10_org: 'Geopogo', exp10_role: 'AI Training Researcher',
-    exp10_desc: 'Training Claude with architecture-design skills for Geopogo\'s Claude-to-Revit plugin, in partnership with Anthropic and Autodesk. Working with graphic and dimensional data from Revit on a small student team mentored by Geopogo\'s CEO, as part of UC Berkeley\'s Data Science Discovery program.',
+    exp8_desc: 'Building the geospatial pipeline for CloudTCP.ai (Traffic Patterns LLC), an automated traffic-control-plan platform, on a 15-engineer client-project team delivered through Berkeley\'s Open Project. Applying computer-vision techniques to OpenStreetMap data to detect road features that feed automated traffic-control-plan generation.',
+    exp10_org: 'Geopogo', exp10_role: 'AI Training Researcher (Intern)',
+    exp10_desc: 'Training Claude on architectural design skills for Geopogo\'s Claude-to-Revit plugin, in partnership with Anthropic and Autodesk. Working with graphic and dimensional data from Revit on a small student team mentored by Geopogo\'s CEO, as part of UC Berkeley\'s Data Science Discovery program.',
   },
   zh: {
     tag: '加州大学伯克利分校 · 2029届',
@@ -1038,7 +1060,7 @@ const STRINGS = {
     label_sketches: '画作',
     label_lang: '语言学习',
     label_writing: '写作',
-    bio1: '我是伯克利大学计算机科学与语言学的双学位学生，主要学习自然语言处理和机器学习。我曾参与开发<em>SightLine</em>——一个基于Meta Ray-Ban眼镜的AI日记项目；为濒危语言<em>Xaitsnoo</em>构建线上词典；并通过伯克利的URAP科研项目参与日英翻译研究。这学期，我加入了<em>Geopogo</em>担任AI训练研究员，并开始在<em>BAIR</em>从事语音感知相关的研究。',
+    bio1: '我是伯克利大学计算机科学与语言学的双学位学生，主要学习自然语言处理和机器学习。我曾参与开发<em>SightLine</em>——一个基于Meta Ray-Ban眼镜的AI日记项目；为濒危语言<em>Xaitsnoo</em>构建线上词典；并通过伯克利的URAP科研项目参与日英翻译研究。这学期，我加入了<em>Geopogo</em>担任AI训练研究员，并开始制作<em>Micromouse</em>自主走迷宫机器人。',
     bio2: '我喜欢<a href="#" onclick="showPage(\'projects\');return false;">做项目</a>、<a href="#" onclick="showPage(\'fun\');return false;">学习语言</a>，认识新同学！如果你想聊聊天，无论有关计算机科学、语言学，或者任何话题，随时欢迎！',
     art2_title: '神奇数字马戏团',
     art2_desc: '我大一下学期加入了校园电子绘画课，是我在伯克利上过的最宝贵的课之一。我不仅在那里认识了我的女朋友，还画了这幅画当作我的最终作品。有这个机会和大家一起学画画，超好玩。',
@@ -1048,6 +1070,10 @@ const STRINGS = {
     n2_desc: '我通过了日语能力考试N2（第二高的等级），目前正在备考N1！',
     folio_title: '写作集',
     folio_desc: '我随笔了挺多创意写作！如果你感兴趣的话，这里有些节选。万一CS这条路走不通可能得转这行了……半开玩笑。',
+    proj5_name: 'Signage（手语翻译）',
+    proj5_desc: '实时美国手语转英文的翻译工具，把摄像头或手机视频转成同步的英文字幕。在The Executable World黑客松中与5人团队共同完成，获AI Assistants赛道二等奖（4,500美元AWS额度）。我们基于MediaPipe Holistic姿态关键点训练了覆盖3,272个手语词的TensorFlow.js识别模型（top-1准确率70%、top-5准确率84%），再由Claude API将识别出的手语序列组织成通顺的英文。',
+    proj6_name: 'Micromouse（迷宫机器人）',
+    proj6_desc: '按IEEE Micromouse比赛标准打造的自主走迷宫机器人，通过伯克利IEEE的Micromouse DeCal与另一位同学两人合作完成。从一块空白PCB开始动手焊接（通孔与贴片元件），并用CircuitPython为RP2040微控制器编写基于传感器的导航与PID电机控制程序。',
     proj1_name: 'Xaitsnoo社区词典',
     proj1_desc: '为濒危语言Xaitsnoo构建的数字社区词典。使用Next.js开发并部署至Vercel，作为URAP研究项目的一部分，提供语料文档与NLP流水线基础设施。',
     proj2_name: 'Dice Vision（骰子检测）',
@@ -1057,7 +1083,7 @@ const STRINGS = {
     proj4_name: 'SightLine',
     proj4_desc: '参与15人团队构建端到端ML流水线——从Meta Ray-Ban眼镜摄取视频，通过视频与语音星系生成每日的60秒精彩回顾。我使用了Transformer模型，从音频中提取语义上下文的Python NLP模块。',
     exp2_org: '加州大学伯克利分校 · LRAP', exp2_role: 'LRAP研究助理 — Xaitsnoo项目',
-    exp2_desc: '我完成了语言数据库的音频转录与音韵学工作，编Python脚本抓取并整理语言数据至词典，用了React与Ariakit创作了Xaitsnoo语言数据库的文化准确前端界面。',
+    exp2_desc: '我用React与Ariakit搭建并部署了面向社区的线上词典平台，将濒危语言的社区词库数字化、结构化；同时完成音频转录与音韵分析，校验词条的语音准确性。',
     exp3_org: '加州大学伯克利分校 · URAP', exp3_role: 'URAP研究助理 — 日英翻译',
     exp3_desc: '我为教授主导的比较文学项目构建了Python脚本，自动化完成文学原典的日英翻译。将译文与日文原文对照，标记细微差别、成语及文化语境错误，持续优化更大语料库的翻译工作流。',
     exp4_org: '女书生态博物馆 · 实习', exp4_role: '语言项目经理',
@@ -1067,12 +1093,10 @@ const STRINGS = {
     exp6_org: 'Beyond Horizon · 实习', exp6_role: '英语辅导老师',
     exp6_desc: '我通过Zoom为台湾小学生教授英语，编写符合学生需求的中英双语教育练习册。',
     exp7_org: '加州大学伯克利分校 学生学习中心', exp7_role: '数学与统计辅导助教',
-    exp7_desc: '在伯克利学生学习中心当任辅导助教，为本科生提供数学与统计课程的辅导与支持。',
+    exp7_desc: '在伯克利学生学习中心的数学与统计辅导项目担任同伴辅导员，每周约7小时，辅导Math 3、16A/B、52、54等课程，涵盖微积分、线性代数与微分方程。',
     exp8_org: 'Open Project @ Berkeley · CloudTCP.ai', exp8_role: '软件工程师',
-    exp8_desc: '通过伯克利Open Project组织，在一个15人的团队中参与CloudTCP.ai（Traffic Patterns LLC）自动化交通控制方案平台的开发。应用计算机视觉技术，处理航拍与街景图像及OpenStreetMap数据，识别道路特征，为自动化交通控制方案生成提供数据支持。',
-    exp9_org: '伯克利人工智能研究实验室 (BAIR)', exp9_role: '本科生研究员',
-    exp9_desc: '在BAIR从事语音感知与传感相关的本科生研究。',
-    exp10_org: 'Geopogo', exp10_role: 'AI训练研究员',
+    exp8_desc: '通过伯克利Open Project组织，在一个15人的团队中参与CloudTCP.ai（Traffic Patterns LLC）自动化交通控制方案平台的开发。应用计算机视觉技术处理OpenStreetMap数据，识别道路特征，为自动化交通控制方案生成提供数据支持。',
+    exp10_org: 'Geopogo', exp10_role: 'AI训练研究员（实习）',
     exp10_desc: '为Geopogo的Claude-to-Revit插件（与Anthropic及Autodesk合作）训练Claude的建筑设计技能。作为伯克利Data Science Discovery项目的一员，在Geopogo CEO指导的小型学生团队中处理Revit的图形与尺寸数据。',
   },
 };
