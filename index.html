@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Jay Jiang — CS & Linguistics @ Berkeley</title>
-<meta name="description" content="Jay Jiang — freshman at UC Berkeley studying Computer Science and Linguistics. NLP researcher, multilingual, builder.">
+<meta name="description" content="Jay Jiang — CS &amp; Linguistics student at UC Berkeley. Speech AI, voice agents, neurotech &amp; BCI researcher.">
 <meta property="og:title" content="Jay Jiang">
-<meta property="og:description" content="CS + Linguistics @ UC Berkeley. NLP, Japanese, builder.">
+<meta property="og:description" content="CS + Linguistics @ UC Berkeley. Speech AI, voice agents, neurotech &amp; BCI.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>谦</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -604,14 +604,15 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
         </div>
       </div>
       <div class="hero-bio">
-        <p data-i18n-html="bio1">I'm a CS and Linguistics double major at Berkeley, focused on NLP and ML. I've worked on <em>SightLine</em>, a ML Day-Recap App using Meta Ray-Ban Glasses, website development for <em>Xaitsnoo</em>, a critically endangered language, and contributed to Japanese–English translation research through Berkeley's URAP. This semester, I joined <em>Geopogo</em> as an AI training researcher and started building an autonomous maze-solving robot in <em>Micromouse</em>.</p>
+        <p data-i18n-html="bio1">I'm a CS and Linguistics student at Berkeley working on speech AI and voice agents — from benchmarking real-world voice agent performance to probing accent representations in self-supervised models. I'm especially interested in neurotech, BCI, and making voice interfaces more accessible to AAC and speech-neuroprosthesis users. I also build drones, maze-solving robots, and the occasional game.</p>
         <p data-i18n-html="bio2">I like <a href="#" onclick="showPage('projects');return false;">building projects</a>, <a href="#" onclick="showPage('fun');return false;">learning languages</a>, and getting to know new people. Don't hesitate to reach out if you want to talk about anything CS or Linguistics related, or, anything, really.</p>
       </div>
       <div class="hero-meta">
+        <span class="meta-chip hi">Speech AI</span>
+        <span class="meta-chip hi">Voice Agents</span>
         <span class="meta-chip hi">NLP</span>
-        <span class="meta-chip hi">ML</span>
+        <span class="meta-chip hm">Neurotech &amp; BCI</span>
         <span class="meta-chip hm">AI Researcher</span>
-        <span class="meta-chip hm">Full-Stack Developer</span>
         <span class="meta-chip hr">JLPT N2</span>
         <span class="meta-chip hr">Mandarin Native</span>
         <span class="meta-chip">Berkeley, CA</span>
@@ -645,7 +646,7 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
     <div class="inner-wrap">
       <div class="glass-wrap fade-in">
         <h2 class="page-heading" id="heading-projects"></h2>
-        <p class="page-subheading" data-i18n="sub_projects">selected work · 2024–2026</p>
+        <p class="page-subheading" data-i18n="sub_projects">selected work · 2024–present</p>
         <div class="project-list">
           <a class="project-item" href="https://github.com/666Kevinyang666/Sign_Language_Translation" target="_blank" rel="noopener">
             <div>
@@ -664,6 +665,19 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
           <div class="project-item">
             <div>
               <div class="project-num">02</div>
+              <div class="project-name" data-i18n="proj_cloudtcp_name">CloudTCP.ai — VLM Sign-Code Extraction</div>
+              <div class="project-desc" data-i18n="proj_cloudtcp_desc">Fine-tuned a 2B Qwen3.5 VLM with Unsloth to extract sign codes from traffic-control plans, raising accuracy from 0.67 to 0.95 on a single consumer GPU. Open Project @ Berkeley.</div>
+              <div class="project-tags">
+                <span class="tag">Qwen3.5</span><span class="tag">Unsloth</span><span class="tag">VLM Fine-tuning</span><span class="tag">Python</span>
+              </div>
+            </div>
+            <div class="project-preview">
+              <img src="assets/cloudtcp-plan.png" alt="Sample traffic control plan drawn in CAD over satellite image">
+            </div>
+          </div>
+          <div class="project-item">
+            <div>
+              <div class="project-num">03</div>
               <div class="project-name" data-i18n="proj6_name">Micromouse</div>
               <div class="project-desc" data-i18n="proj6_desc">An autonomous maze-solving robot built to IEEE Micromouse competition standards on a 2-person team through IEEE at Berkeley's Micromouse DeCal. Assembling the mouse from a bare PCB (through-hole and SMD soldering) and programming its RP2040 microcontroller in CircuitPython for sensor-based navigation and PID motor control.</div>
               <div class="project-tags">
@@ -676,7 +690,7 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
           </div>
           <a class="project-item" href="https://github.com/Xaitsnoo-Community-Dictionary-Project/xaitsnoo" target="_blank" rel="noopener">
             <div>
-              <div class="project-num">03</div>
+              <div class="project-num">04</div>
               <div class="project-name" data-i18n="proj1_name">Xaitsnoo Community Dictionary</div>
               <div class="project-desc" data-i18n="proj1_desc">A digital community dictionary for Xaitsnoo, a critically endangered language. Built with Next.js and deployed to Vercel as part of a URAP research engagement. Infrastructure for corpus documentation and an NLP pipeline.</div>
               <div class="project-tags">
@@ -690,7 +704,7 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
           </a>
           <a class="project-item" href="https://github.com/jaymr06/dice-vision" target="_blank" rel="noopener">
             <div>
-              <div class="project-num">04</div>
+              <div class="project-num">05</div>
               <div class="project-name" data-i18n="proj2_name">Dice Vision</div>
               <div class="project-desc" data-i18n="proj2_desc">Real-time dice detection with a fine-tuned YOLOv8 model (mAP50 ~0.966). FastAPI backend, mobile browser frontend. Targeting deployment to Hugging Face Spaces and Vercel.</div>
               <div class="project-tags">
@@ -704,7 +718,7 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
           </a>
           <a class="project-item" href="https://debate-club-hell.vercel.app/" target="_blank" rel="noopener">
             <div>
-              <div class="project-num">05</div>
+              <div class="project-num">06</div>
               <div class="project-name" data-i18n="proj3_name">Debate Club from Hell</div>
               <div class="project-desc" data-i18n="proj3_desc">An interactive browser debate game featuring Mafu, an AI rendition of my D&D OC. Deployed to Vercel.</div>
               <div class="project-tags">
@@ -718,7 +732,7 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
           </a>
           <a class="project-item" href="https://drive.google.com/file/d/19bhnF3zwJTPj_g37s9-ao-iuTKTYZc0_/view?usp=sharing" target="_blank" rel="noopener">
             <div>
-              <div class="project-num">06</div>
+              <div class="project-num">07</div>
               <div class="project-name" data-i18n="proj4_name">SightLine</div>
               <div class="project-desc" data-i18n="proj4_desc">Contributed to a 15-member team building an end-to-end ML pipeline that ingests video from Meta Ray-Ban glasses and generates a 60-second daily highlight recap. Built a Python NLP module using transformer-based models to extract semantic context from audio transcripts.</div>
               <div class="project-tags">
@@ -745,11 +759,36 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
         <p class="page-subheading" data-i18n="sub_experience">work, research, and skills</p>
         <div class="exp-list">
           <div class="exp-item">
+            <div class="exp-period">Oct 2026 — present<br>Berkeley, CA</div>
+            <div>
+              <div class="exp-org" data-i18n="exp11_org">Dimensional</div>
+              <div class="exp-role" data-i18n="exp11_role">Hardware &amp; Production Assistant (Contract)</div>
+              <div class="exp-desc" data-i18n="exp11_desc">Built a PX4 quadcopter end to end: integrated flight controller, GPS, and radio links; configured PX4 firmware and parameters. Calibrated sensors and controls, set up long-range video and MAVLink telemetry to a QGroundControl ground station, and ran field flight operations for on-set filming.</div>
+            </div>
+          </div>
+          <a class="exp-item linkable" href="https://ultimatevoicebench.com" target="_blank" rel="noopener">
+            <div class="exp-period">Oct 2026 — present<br>Berkeley, CA</div>
+            <div>
+              <div class="exp-org" data-i18n="exp12_org">Berkeley Speech Group</div>
+              <div class="exp-role" data-i18n="exp12_role">Undergraduate Researcher — Ultimate Voice Bench</div>
+              <div class="exp-desc" data-i18n="exp12_desc">Founding member of Ultimate Voice Bench, a benchmark evaluating voice AI agents on real-world tasks and difficult callers. Proposed an accessibility evaluation track for voice agents serving AAC and speech-neuroprosthesis users (e.g., ALS), measuring task correctness against confirmation cost under slow, error-prone input. Led outreach to 10+ AAC, speech-BCI, and voice-AI companies (e.g., Voiceitt, Synchron) to source real deployment failure cases. Mentor: Jiachen Lian, PhD.</div>
+            </div>
+            <div class="exp-arrow">↗&#xFE0E;</div>
+          </a>
+          <div class="exp-item">
+            <div class="exp-period">Sep 2026 — present<br>Berkeley, CA</div>
+            <div>
+              <div class="exp-org" data-i18n="exp13_org">UC Berkeley Linguistics</div>
+              <div class="exp-role" data-i18n="exp13_role">Research Apprentice — Accent Representations in Speech Models</div>
+              <div class="exp-desc" data-i18n="exp13_desc">Probing whether L1 and L2 English accents separate systematically in self-supervised speech model (HuBERT, mHuBERT) embedding space, using the Speech Accent Archive and ALLSSTAR corpora. Running Montreal Forced Aligner on Berkeley's Savio HPC cluster; replicating prior HuBERT accent-probing results. Advisors: Prof. Keith Johnson and Noah Macey.</div>
+            </div>
+          </div>
+          <div class="exp-item">
             <div class="exp-period">Aug 2026 — present<br>Berkeley, CA</div>
             <div>
               <div class="exp-org" data-i18n="exp10_org">Geopogo</div>
               <div class="exp-role" data-i18n="exp10_role">AI Training Researcher (Intern)</div>
-              <div class="exp-desc" data-i18n="exp10_desc">Training Claude on architectural design skills for Geopogo's Claude-to-Revit plugin, in partnership with Anthropic and Autodesk. Working with graphic and dimensional data from Revit on a small student team mentored by Geopogo's CEO, as part of UC Berkeley's Data Science Discovery program.</div>
+              <div class="exp-desc" data-i18n="exp10_desc">Compiling Claude skills that drive Autodesk Revit via Geopogo's plugin, with field-tested architectural design workflows. Documented connector failure modes and workarounds, and added read-back verification so Claude checks built models against target dimensions. Mentored by Geopogo's CEO, as part of UC Berkeley's Data Science Discovery program.</div>
             </div>
           </div>
           <div class="exp-item">
@@ -763,9 +802,9 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
           <div class="exp-item">
             <div class="exp-period">Jul 2026 — present<br>Berkeley, CA</div>
             <div>
-              <div class="exp-org" data-i18n="exp8_org">Open Project @ Berkeley · CloudTCP.ai</div>
-              <div class="exp-role" data-i18n="exp8_role">Software Engineer</div>
-              <div class="exp-desc" data-i18n="exp8_desc">Build the geospatial pipeline for CloudTCP.ai (Traffic Patterns LLC), an automated traffic-control-plan platform, on a 15-engineer client-project team delivered through Berkeley's Open Project. Apply computer-vision techniques to OpenStreetMap data to detect road features that feed automated traffic-control-plan generation.</div>
+              <div class="exp-org" data-i18n="exp8_org">CloudTCP.ai · Open Project @ Berkeley</div>
+              <div class="exp-role" data-i18n="exp8_role">VLM Researcher</div>
+              <div class="exp-desc" data-i18n="exp8_desc">Fine-tuned a 2B Qwen3.5 VLM with Unsloth to extract sign codes from traffic-control plans, raising accuracy from 0.67 to 0.95 on a single consumer GPU. Delivered as part of a 15-engineer client project through Berkeley's Open Project.</div>
             </div>
           </div>
           <div class="exp-item">
@@ -815,15 +854,25 @@ a.gallery-item { color: inherit; text-decoration: none; display: flex; }
         <div class="section-label" data-i18n="label_skills">Technical Skills</div>
         <div class="skills-strip">
           <span class="skill-pill">Python</span>
+          <span class="skill-pill">JavaScript</span>
           <span class="skill-pill">TypeScript</span>
+          <span class="skill-pill">Java</span>
+          <span class="skill-pill">SQL</span>
+          <span class="skill-pill">C</span>
           <span class="skill-pill">React</span>
-          <span class="skill-pill">Next.js</span>
           <span class="skill-pill">FastAPI</span>
-          <span class="skill-pill">PyTorch</span>
-          <span class="skill-pill">Hugging Face</span>
-          <span class="skill-pill">YOLOv8</span>
-          <span class="skill-pill">LaTeX</span>
+          <span class="skill-pill">Node.js</span>
+          <span class="skill-pill">Docker</span>
+          <span class="skill-pill">Slurm / HPC</span>
+          <span class="skill-pill">PX4</span>
           <span class="skill-pill">Git</span>
+          <span class="skill-pill">Claude API</span>
+          <span class="skill-pill">TensorFlow.js</span>
+          <span class="skill-pill">MediaPipe</span>
+          <span class="skill-pill">HuBERT</span>
+          <span class="skill-pill">Montreal Forced Aligner</span>
+          <span class="skill-pill">YOLOv8</span>
+          <span class="skill-pill">BERT</span>
           <span class="skill-pill">Japanese N2</span>
           <span class="skill-pill">Mandarin (native)</span>
           <span class="skill-pill">English (native)</span>
@@ -1003,14 +1052,14 @@ const STRINGS = {
     tag: 'uc berkeley  ·  class of 2029',
     nav: ['intro','projects','experience','fun'],
     headings: { projects:'Projects', experience:'Experience', fun:'Fun' },
-    sub_projects: 'selected work · 2024–2026',
+    sub_projects: 'selected work · 2024–present',
     sub_experience: 'work, research, and skills',
     sub_fun: 'drawings, languages, and more',
     label_skills: 'Technical Skills',
     label_sketches: 'Sketches',
     label_lang: 'Language Learning',
     label_writing: 'Writing',
-    bio1: 'I\'m a CS and Linguistics double major at Berkeley, focused on NLP and ML. I\'ve worked on <em>SightLine</em>, a ML Day-Recap App using Meta Ray-Ban Glasses, website development for <em>Xaitsnoo</em>, a critically endangered language, and contributed to Japanese–English translation research through Berkeley\'s URAP. This semester, I joined <em>Geopogo</em> as an AI training researcher and started building an autonomous maze-solving robot for <em>Micromouse</em>.',
+    bio1: 'I\'m a CS and Linguistics student at Berkeley working on speech AI and voice agents — from benchmarking real-world voice agent performance to probing accent representations in self-supervised models. I\'m especially interested in neurotech, BCI, and making voice interfaces more accessible to AAC and speech-neuroprosthesis users. I also build drones, maze-solving robots, and the occasional debate game.',
     bio2: 'I like <a href="#" onclick="showPage(\'projects\');return false;">building projects</a>, <a href="#" onclick="showPage(\'fun\');return false;">learning languages</a>, and getting to know new people. Don\'t hesitate to reach out if you want to talk about anything CS or Linguistics related, or, anything, really.',
     art2_title: 'DPD (Digital Painting Decal)',
     art2_desc: 'I joined the Digital Painting Decal on campus during my freshman spring, and it was one of the best experiences I ever had. Not only did I meet my current girlfriend there, but I also had the chance to make this as my final project! I had a lot of fun learning how to draw.',
@@ -1044,23 +1093,31 @@ const STRINGS = {
     exp6_desc: 'Taught English to underprivileged elementary school students in Taiwan over Zoom. Developed bilingual English–Chinese educational workbooks tailored to student needs.',
     exp7_org: 'UC Berkeley Student Learning Center', exp7_role: 'Mathematics & Statistics Peer Tutor',
     exp7_desc: 'Peer tutor in the Student Learning Center\'s Mathematics & Statistics program, supporting UC Berkeley undergraduates ~7 hrs/week. Support students across Math 3, 16A/B, 52, and 54, covering calculus, linear algebra, and differential equations.',
-    exp8_org: 'Open Project @ Berkeley · CloudTCP.ai', exp8_role: 'Software Engineer',
-    exp8_desc: 'Building the geospatial pipeline for CloudTCP.ai (Traffic Patterns LLC), an automated traffic-control-plan platform, on a 15-engineer client-project team delivered through Berkeley\'s Open Project. Applying computer-vision techniques to OpenStreetMap data to detect road features that feed automated traffic-control-plan generation.',
     exp10_org: 'Geopogo', exp10_role: 'AI Training Researcher (Intern)',
-    exp10_desc: 'Training Claude on architectural design skills for Geopogo\'s Claude-to-Revit plugin, in partnership with Anthropic and Autodesk. Working with graphic and dimensional data from Revit on a small student team mentored by Geopogo\'s CEO, as part of UC Berkeley\'s Data Science Discovery program.',
+    exp10_desc: 'Compiling Claude skills that drive Autodesk Revit via Geopogo\'s plugin, with field-tested architectural design workflows. Documented connector failure modes and workarounds, and added read-back verification so Claude checks built models against target dimensions. Mentored by Geopogo\'s CEO, as part of UC Berkeley\'s Data Science Discovery program.',
+    exp11_org: 'Dimensional', exp11_role: 'Hardware & Production Assistant (Contract)',
+    exp11_desc: 'Built a PX4 quadcopter end to end: integrated flight controller, GPS, and radio links; configured PX4 firmware and parameters. Calibrated sensors and controls, set up long-range video and MAVLink telemetry to a QGroundControl ground station, and ran field flight operations for on-set filming.',
+    exp12_org: 'Berkeley Speech Group', exp12_role: 'Undergraduate Researcher — Ultimate Voice Bench',
+    exp12_desc: 'Founding member of Ultimate Voice Bench, a benchmark evaluating voice AI agents on real-world tasks and difficult callers. Proposed an accessibility evaluation track for voice agents serving AAC and speech-neuroprosthesis users (e.g., ALS), measuring task correctness against confirmation cost under slow, error-prone input. Led outreach to 10+ AAC, speech-BCI, and voice-AI companies (e.g., Voiceitt, Synchron) to source real deployment failure cases. Mentor: Jiachen Lian, PhD.',
+    exp13_org: 'UC Berkeley Linguistics', exp13_role: 'Research Apprentice — Accent Representations in Speech Models',
+    exp13_desc: 'Probing whether L1 and L2 English accents separate systematically in self-supervised speech model (HuBERT, mHuBERT) embedding space, using the Speech Accent Archive and ALLSSTAR corpora. Running Montreal Forced Aligner on Berkeley\'s Savio HPC cluster; replicating prior HuBERT accent-probing results. Advisors: Prof. Keith Johnson and Noah Macey.',
+    exp8_org: 'CloudTCP.ai · Open Project @ Berkeley', exp8_role: 'VLM Researcher',
+    exp8_desc: 'Fine-tuned a 2B Qwen3.5 VLM with Unsloth to extract sign codes from traffic-control plans, raising accuracy from 0.67 to 0.95 on a single consumer GPU. Delivered as part of a 15-engineer client project through Berkeley\'s Open Project.',
+    proj_cloudtcp_name: 'CloudTCP.ai — VLM Sign-Code Extraction',
+    proj_cloudtcp_desc: 'Fine-tuned a 2B Qwen3.5 VLM with Unsloth to extract sign codes from traffic-control plans, raising accuracy from 0.67 to 0.95 on a single consumer GPU. Open Project @ Berkeley.',
   },
   zh: {
     tag: '加州大学伯克利分校 · 2029届',
     nav: ['简介','项目','经历','趣味'],
     headings: { projects:'项目', experience:'经历', fun:'趣味' },
-    sub_projects: '精选作品 · 2024–2026',
+    sub_projects: '精选作品 · 2024–至今',
     sub_experience: '工作、科研与技能',
     sub_fun: '画画、语言，更多',
     label_skills: '技术技能',
     label_sketches: '画作',
     label_lang: '语言学习',
     label_writing: '写作',
-    bio1: '我是伯克利大学计算机科学与语言学的双学位学生，主要学习自然语言处理和机器学习。我曾参与开发<em>SightLine</em>——一个基于Meta Ray-Ban眼镜的AI日记项目；为濒危语言<em>Xaitsnoo</em>构建线上词典；并通过伯克利的URAP科研项目参与日英翻译研究。这学期，我加入了<em>Geopogo</em>担任AI训练研究员，并开始制作<em>Micromouse</em>自主走迷宫机器人。',
+    bio1: '我是伯克利大学计算机科学与语言学的双学位学生，专注于语音AI和语音智能体——从真实场景下语音智能体的评测基准构建，到自监督语音模型中口音表示的探索。我对神经技术、脑机接口以及为AAC和言语神经假肢用户打造更无障碍的语音界面尤感兴趣。业余时间我也做无人机、迷宫机器人和一些好玩的游戏。',
     bio2: '我喜欢<a href="#" onclick="showPage(\'projects\');return false;">做项目</a>、<a href="#" onclick="showPage(\'fun\');return false;">学习语言</a>，认识新同学！如果你想聊聊天，无论有关计算机科学、语言学，或者任何话题，随时欢迎！',
     art2_title: '神奇数字马戏团',
     art2_desc: '我大一下学期加入了校园电子绘画课，是我在伯克利上过的最宝贵的课之一。我不仅在那里认识了我的女朋友，还画了这幅画当作我的最终作品。有这个机会和大家一起学画画，超好玩。',
@@ -1094,10 +1151,18 @@ const STRINGS = {
     exp6_desc: '我通过Zoom为台湾小学生教授英语，编写符合学生需求的中英双语教育练习册。',
     exp7_org: '加州大学伯克利分校 学生学习中心', exp7_role: '数学与统计辅导助教',
     exp7_desc: '在伯克利学生学习中心的数学与统计辅导项目担任同伴辅导员，每周约7小时，辅导Math 3、16A/B、52、54等课程，涵盖微积分、线性代数与微分方程。',
-    exp8_org: 'Open Project @ Berkeley · CloudTCP.ai', exp8_role: '软件工程师',
-    exp8_desc: '通过伯克利Open Project组织，在一个15人的团队中参与CloudTCP.ai（Traffic Patterns LLC）自动化交通控制方案平台的开发。应用计算机视觉技术处理OpenStreetMap数据，识别道路特征，为自动化交通控制方案生成提供数据支持。',
     exp10_org: 'Geopogo', exp10_role: 'AI训练研究员（实习）',
-    exp10_desc: '为Geopogo的Claude-to-Revit插件（与Anthropic及Autodesk合作）训练Claude的建筑设计技能。作为伯克利Data Science Discovery项目的一员，在Geopogo CEO指导的小型学生团队中处理Revit的图形与尺寸数据。',
+    exp10_desc: '通过Geopogo的插件编写驱动Autodesk Revit的Claude技能，并完成实际建筑设计工作流的测试。记录了连接器故障模式与应对方案，新增回读验证功能，使Claude能将构建结果与目标尺寸对比校验。在Geopogo CEO的指导下完成，作为伯克利Data Science Discovery项目的一部分。',
+    exp11_org: 'Dimensional', exp11_role: '硬件与制作助理（合同工）',
+    exp11_desc: '从零搭建了一架PX4四旋翼无人机：完成飞控、GPS与数传链路的集成，配置PX4固件及参数。完成传感器与控制系统校准，搭建长距视频与MAVLink遥测至QGroundControl地面站的通信链路，并参与现场飞行拍摄操作。',
+    exp12_org: '伯克利语音组', exp12_role: '本科研究员 — Ultimate Voice Bench',
+    exp12_desc: 'Ultimate Voice Bench创始成员，该基准测试专注于在真实任务和难缠来电者场景下评估语音AI智能体。提出了面向AAC和言语神经假肢用户（如ALS患者）的无障碍评估方向，以慢速、高错误率输入下任务正确率与确认成本作为衡量指标。主导向10余家AAC、言语BCI和语音AI公司（如Voiceitt、Synchron）发起外展，收集真实部署的失败案例。导师：Jiachen Lian，博士。',
+    exp13_org: '加州大学伯克利分校语言学系', exp13_role: '研究学徒 — 语音模型中的口音表示',
+    exp13_desc: '探究L1和L2英语口音在自监督语音模型（HuBERT、mHuBERT）嵌入空间中是否存在系统性区分，使用Speech Accent Archive和ALLSSTAR语料库。在伯克利Savio高性能计算集群上运行Montreal Forced Aligner，复现HuBERT口音探测的已有结果。指导教授：Keith Johnson教授和Noah Macey。',
+    exp8_org: 'CloudTCP.ai · Open Project @ Berkeley', exp8_role: 'VLM研究员',
+    exp8_desc: '使用Unsloth对2B Qwen3.5 VLM进行微调，从交通控制方案中提取标志代码，在单块消费级GPU上将准确率从0.67提升至0.95。作为伯克利Open Project 15人工程团队的一部分完成交付。',
+    proj_cloudtcp_name: 'CloudTCP.ai — VLM标志代码提取',
+    proj_cloudtcp_desc: '使用Unsloth对2B Qwen3.5 VLM进行微调，从交通控制方案中提取标志代码，在单块消费级GPU上将准确率从0.67提升至0.95。伯克利Open Project开放项目。',
   },
 };
 
